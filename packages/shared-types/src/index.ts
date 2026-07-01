@@ -42,3 +42,32 @@ export interface DriverRegisterDto {
   phone: string;
   requestedPointId?: string;
 }
+
+export interface StartTripDto {
+  pointId?: string;
+}
+
+export interface LocationPingDto {
+  tripId: string;
+  lat: number;
+  lng: number;
+  speed?: number;
+  timestamp?: string;
+}
+
+export interface LiveDriverSummary {
+  firstName: string;
+  vehicleNo: string;
+}
+
+export interface LiveLocationUpdate {
+  tripId: string;
+  pointId: string;
+  pointCode: string;
+  lat: number;
+  lng: number;
+  speed: number | null;
+  timestamp: string;
+  etaSeconds: number | null;
+  driver: LiveDriverSummary;
+}

@@ -8,6 +8,7 @@ import { corsOrigins, env } from "./config/env.js";
 import { prisma } from "./db/prisma.js";
 import { errorHandler, notFoundHandler } from "./middleware/error.middleware.js";
 import { apiRouter } from "./routes/index.js";
+import { startSignalLostScanner } from "./services/live-location.service.js";
 import { connectRedis, closeRedis } from "./services/redis.service.js";
 import { registerSocketHandlers } from "./sockets/index.js";
 
@@ -19,6 +20,7 @@ const io = new Server(httpServer, {
     credentials: true
   }
 });
+let stopSignalLostScanner: (() => void) | null = null;
 
 app.use(helmet());
 app.use(
@@ -39,6 +41,7 @@ registerSocketHandlers(io);
 async function start() {
   await prisma.$connect();
   await connectRedis();
+  stopSignalLostScanner = startSignalLostScanner(io);
 
   httpServer.listen(env.PORT, () => {
     console.info(`API listening on http://localhost:${env.PORT}`);
@@ -47,6 +50,7 @@ async function start() {
 
 async function shutdown(signal: string) {
   console.info(`${signal} received. Shutting down API.`);
+  stopSignalLostScanner?.();
   httpServer.close(async () => {
     await closeRedis();
     await prisma.$disconnect();
