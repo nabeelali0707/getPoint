@@ -7,7 +7,7 @@ Monorepo scaffold for the Point Management System.
 Implemented in `apps/api`:
 
 - Express + TypeScript API server
-- Socket.io server bootstrap
+- Supabase Realtime broadcast integration
 - Prisma schema for users, profiles, points, trips, pings, reports, notifications, and refresh tokens
 - Postgres-backed OTP and live-location state
 - Student NU-email signup with OTP verification
@@ -67,7 +67,7 @@ Health check: `GET http://localhost:4000/api/health`
 
 - Prisma is used as the single ORM.
 - OTPs are stored in PostgreSQL ephemeral state with a 10-minute default TTL.
-- Latest trip locations are cached in PostgreSQL for Socket.io initial state.
+- Latest trip locations are cached in PostgreSQL for live initial state.
 - Access tokens default to 15 minutes; refresh tokens default to 7 days and are stored hashed in PostgreSQL for rotation/revocation.
 - Student signup enforces `^[a-zA-Z][0-9]{6}@nu\.edu\.pk$` on the server.
-- Socket.io broadcasts trip/location updates to in-process rooms.
+- Supabase Realtime broadcasts trip/location updates on point and trip channels.
