@@ -1,0 +1,3066 @@
+[
+  {
+    "code": "Jadoon R:2",
+    "provider": "Jadoon",
+    "driverName": "Razaq",
+    "driverPhone": "03177153606",
+    "startTime": "06:35",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "G3 Stop",
+        "sequence": 0,
+        "scheduledTime": "06:35",
+        "lat": 24.9255,
+        "lng": 67.143
+      },
+      {
+        "name": "KBACHS Society / Sachal Colony",
+        "sequence": 1,
+        "scheduledTime": "06:55",
+        "lat": 24.919279,
+        "lng": 67.157844
+      },
+      {
+        "name": "Shahmir Colony Gate",
+        "sequence": 2,
+        "scheduledTime": "06:56",
+        "lat": 24.908818,
+        "lng": 67.170771
+      },
+      {
+        "name": "Makhdoom Bilawal",
+        "sequence": 3,
+        "scheduledTime": "06:57",
+        "lat": 24.901984,
+        "lng": 67.1837
+      },
+      {
+        "name": "Chapal Bangalows",
+        "sequence": 4,
+        "scheduledTime": "06:58",
+        "lat": 24.89464,
+        "lng": 67.196168
+      },
+      {
+        "name": "Memon Medical Hospital",
+        "sequence": 5,
+        "scheduledTime": "07:00",
+        "lat": 24.88833,
+        "lng": 67.211482
+      },
+      {
+        "name": "Roofi Banglos",
+        "sequence": 6,
+        "scheduledTime": "07:01",
+        "lat": 24.87912,
+        "lng": 67.224369
+      },
+      {
+        "name": "Sunlay Bangalows",
+        "sequence": 7,
+        "scheduledTime": "07:02",
+        "lat": 24.873139,
+        "lng": 67.236177
+      },
+      {
+        "name": "Safoora",
+        "sequence": 8,
+        "scheduledTime": "07:05",
+        "lat": 24.865248,
+        "lng": 67.25082
+      },
+      {
+        "name": "FAST NU",
+        "sequence": 9,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:3",
+    "provider": "Jadoon",
+    "driverName": "Zeeshan",
+    "driverPhone": "03121086755",
+    "startTime": "06:25",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Rabia City",
+        "sequence": 0,
+        "scheduledTime": "06:25",
+        "lat": 24.912727,
+        "lng": 67.172118
+      },
+      {
+        "name": "Pahalwan Goath",
+        "sequence": 1,
+        "scheduledTime": "06:30",
+        "lat": 24.905891,
+        "lng": 67.184941
+      },
+      {
+        "name": "Sindh Baloch",
+        "sequence": 2,
+        "scheduledTime": "06:35",
+        "lat": 24.895368,
+        "lng": 67.199885
+      },
+      {
+        "name": "Baithak Merriage Lawn",
+        "sequence": 3,
+        "scheduledTime": "06:40",
+        "lat": 24.889156,
+        "lng": 67.212129
+      },
+      {
+        "name": "Nawazsharif Scheem",
+        "sequence": 4,
+        "scheduledTime": "06:45",
+        "lat": 24.882059,
+        "lng": 67.223892
+      },
+      {
+        "name": "Bismillah Tower(PIA)",
+        "sequence": 5,
+        "scheduledTime": "06:46",
+        "lat": 24.873994,
+        "lng": 67.237453
+      },
+      {
+        "name": "Magsi Chowke",
+        "sequence": 6,
+        "scheduledTime": "06:50",
+        "lat": 24.863826,
+        "lng": 67.252447
+      },
+      {
+        "name": "Fast",
+        "sequence": 7,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:3B",
+    "provider": "Jadoon",
+    "driverName": "Shahid",
+    "driverPhone": "03158210003",
+    "startTime": "06:40",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Chishti Nagar",
+        "sequence": 0,
+        "scheduledTime": "06:40",
+        "lat": 24.924889,
+        "lng": 67.004823
+      },
+      {
+        "name": "Kamran Chowrangi",
+        "sequence": 1,
+        "scheduledTime": "06:45",
+        "lat": 24.914805,
+        "lng": 67.047341
+      },
+      {
+        "name": "Tyre Puncture Shop",
+        "sequence": 2,
+        "scheduledTime": "06:48",
+        "lat": 24.901439,
+        "lng": 67.092525
+      },
+      {
+        "name": "Munawar Chowrangi",
+        "sequence": 3,
+        "scheduledTime": "06:50",
+        "lat": 24.890826,
+        "lng": 67.133692
+      },
+      {
+        "name": "Sardar CNG",
+        "sequence": 4,
+        "scheduledTime": "06:55",
+        "lat": 24.880325,
+        "lng": 67.177259
+      },
+      {
+        "name": "Nawabish",
+        "sequence": 5,
+        "scheduledTime": "07:00",
+        "lat": 24.867525,
+        "lng": 67.221359
+      },
+      {
+        "name": "Fast",
+        "sequence": 6,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:4",
+    "provider": "Jadoon",
+    "driverName": "M Ali",
+    "driverPhone": "03006881595",
+    "startTime": "06:30",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Maymar Gate",
+        "sequence": 0,
+        "scheduledTime": "06:30",
+        "lat": 25.0112,
+        "lng": 67.1264
+      },
+      {
+        "name": "Jamali Pull",
+        "sequence": 1,
+        "scheduledTime": "06:45",
+        "lat": 24.979439,
+        "lng": 67.155312
+      },
+      {
+        "name": "Al Asif",
+        "sequence": 2,
+        "scheduledTime": "06:48",
+        "lat": 24.950125,
+        "lng": 67.181084
+      },
+      {
+        "name": "Abbas Town",
+        "sequence": 3,
+        "scheduledTime": "06:50",
+        "lat": 24.918449,
+        "lng": 67.209473
+      },
+      {
+        "name": "Paradise Bakery",
+        "sequence": 4,
+        "scheduledTime": "06:52",
+        "lat": 24.888071,
+        "lng": 67.238122
+      },
+      {
+        "name": "Fast NU",
+        "sequence": 5,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:4B",
+    "provider": "Jadoon",
+    "driverName": "Babu",
+    "driverPhone": "03232335735",
+    "startTime": "06:55",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Maskan",
+        "sequence": 0,
+        "scheduledTime": "06:55",
+        "lat": 24.9312,
+        "lng": 67.097
+      },
+      {
+        "name": "Disco Bakery",
+        "sequence": 1,
+        "scheduledTime": "06:58",
+        "lat": 24.913765,
+        "lng": 67.137808
+      },
+      {
+        "name": "Rimjim Hall",
+        "sequence": 2,
+        "scheduledTime": "07:00",
+        "lat": 24.893226,
+        "lng": 67.181471
+      },
+      {
+        "name": "Dhaka Sweet",
+        "sequence": 3,
+        "scheduledTime": "07:02",
+        "lat": 24.876763,
+        "lng": 67.222639
+      },
+      {
+        "name": "Fast",
+        "sequence": 4,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:5.",
+    "provider": "Jadoon",
+    "driverName": "zardari",
+    "driverPhone": "03120823487",
+    "startTime": "06:30",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Saima Arabian",
+        "sequence": 0,
+        "scheduledTime": "06:30",
+        "lat": 24.832434,
+        "lng": 67.042583
+      },
+      {
+        "name": "4K Stop",
+        "sequence": 1,
+        "scheduledTime": "06:35",
+        "lat": 24.836908,
+        "lng": 67.069439
+      },
+      {
+        "name": "2 Minute",
+        "sequence": 2,
+        "scheduledTime": "06:36",
+        "lat": 24.838868,
+        "lng": 67.097806
+      },
+      {
+        "name": "Power House",
+        "sequence": 3,
+        "scheduledTime": "06:38",
+        "lat": 24.840737,
+        "lng": 67.12669
+      },
+      {
+        "name": "Saleem Center",
+        "sequence": 4,
+        "scheduledTime": "06:40",
+        "lat": 24.843628,
+        "lng": 67.152956
+      },
+      {
+        "name": "UP-More",
+        "sequence": 5,
+        "scheduledTime": "06:42",
+        "lat": 24.847371,
+        "lng": 67.181669
+      },
+      {
+        "name": "Nagan (Dahli Hall)",
+        "sequence": 6,
+        "scheduledTime": "06:44",
+        "lat": 24.849611,
+        "lng": 67.20863
+      },
+      {
+        "name": "Alnoor Edhi Center",
+        "sequence": 7,
+        "scheduledTime": "06:50",
+        "lat": 24.854786,
+        "lng": 67.237283
+      },
+      {
+        "name": "FAST-NU",
+        "sequence": 8,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:5B",
+    "provider": "Jadoon",
+    "driverName": "Jibran",
+    "driverPhone": "03062389693",
+    "startTime": "06:35",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Dolmin Mall",
+        "sequence": 0,
+        "scheduledTime": "06:35",
+        "lat": 24.857418,
+        "lng": 67.088671
+      },
+      {
+        "name": "5 Star",
+        "sequence": 1,
+        "scheduledTime": "06:37",
+        "lat": 24.858295,
+        "lng": 67.112361
+      },
+      {
+        "name": "Farooq.e.Azam",
+        "sequence": 2,
+        "scheduledTime": "06:38",
+        "lat": 24.85702,
+        "lng": 67.139465
+      },
+      {
+        "name": "KIHD",
+        "sequence": 3,
+        "scheduledTime": "06:50",
+        "lat": 24.856283,
+        "lng": 67.164454
+      },
+      {
+        "name": "Lucky 1",
+        "sequence": 4,
+        "scheduledTime": "07:02",
+        "lat": 24.8569,
+        "lng": 67.190383
+      },
+      {
+        "name": "Moti Mahal",
+        "sequence": 5,
+        "scheduledTime": "07:04",
+        "lat": 24.856968,
+        "lng": 67.215783
+      },
+      {
+        "name": "Gulshan Dhaka",
+        "sequence": 6,
+        "scheduledTime": "07:05",
+        "lat": 24.857037,
+        "lng": 67.240204
+      },
+      {
+        "name": "FAST-NU",
+        "sequence": 7,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:6.",
+    "provider": "Jadoon",
+    "driverName": "ahsan",
+    "driverPhone": "03022844393",
+    "startTime": "06:30",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Ajmair Nagri",
+        "sequence": 0,
+        "scheduledTime": "06:30",
+        "lat": 24.872306,
+        "lng": 67.149274
+      },
+      {
+        "name": "Bombay Bakery",
+        "sequence": 1,
+        "scheduledTime": "06:31",
+        "lat": 24.870791,
+        "lng": 67.166557
+      },
+      {
+        "name": "Oxford School",
+        "sequence": 2,
+        "scheduledTime": "06:32",
+        "lat": 24.866636,
+        "lng": 67.182037
+      },
+      {
+        "name": "Bara Dari",
+        "sequence": 3,
+        "scheduledTime": "06:33",
+        "lat": 24.865319,
+        "lng": 67.197683
+      },
+      {
+        "name": "Babul Islam",
+        "sequence": 4,
+        "scheduledTime": "06:35",
+        "lat": 24.862931,
+        "lng": 67.21472
+      },
+      {
+        "name": "Disco More",
+        "sequence": 5,
+        "scheduledTime": "06:37",
+        "lat": 24.860623,
+        "lng": 67.23085
+      },
+      {
+        "name": "Fazal Mill",
+        "sequence": 6,
+        "scheduledTime": "06:55",
+        "lat": 24.858705,
+        "lng": 67.249284
+      },
+      {
+        "name": "FAST-NU",
+        "sequence": 7,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:6B",
+    "provider": "Jadoon",
+    "driverName": "ahsan",
+    "driverPhone": "03022844393",
+    "startTime": "06:40",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Anda More",
+        "sequence": 0,
+        "scheduledTime": "06:40",
+        "lat": 24.956232,
+        "lng": 67.137901
+      },
+      {
+        "name": "Haider Food",
+        "sequence": 1,
+        "scheduledTime": "06:41",
+        "lat": 24.945035,
+        "lng": 67.152045
+      },
+      {
+        "name": "DC Office",
+        "sequence": 2,
+        "scheduledTime": "06:45",
+        "lat": 24.936848,
+        "lng": 67.161939
+      },
+      {
+        "name": "Pepoles Chowrangi",
+        "sequence": 3,
+        "scheduledTime": "06:47",
+        "lat": 24.925322,
+        "lng": 67.176272
+      },
+      {
+        "name": "Gulberg",
+        "sequence": 4,
+        "scheduledTime": "06:49",
+        "lat": 24.915682,
+        "lng": 67.188796
+      },
+      {
+        "name": "Raheem Hospital",
+        "sequence": 5,
+        "scheduledTime": "06:50",
+        "lat": 24.905892,
+        "lng": 67.202073
+      },
+      {
+        "name": "Water pump More",
+        "sequence": 6,
+        "scheduledTime": "06:51",
+        "lat": 24.897136,
+        "lng": 67.214344
+      },
+      {
+        "name": "Ancholi",
+        "sequence": 7,
+        "scheduledTime": "06:53",
+        "lat": 24.886419,
+        "lng": 67.227148
+      },
+      {
+        "name": "Suhrab Goth",
+        "sequence": 8,
+        "scheduledTime": "06:54",
+        "lat": 24.877362,
+        "lng": 67.239856
+      },
+      {
+        "name": "Fazal Mill",
+        "sequence": 9,
+        "scheduledTime": "06:55",
+        "lat": 24.867656,
+        "lng": 67.252145
+      },
+      {
+        "name": "Fast",
+        "sequence": 10,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:7",
+    "provider": "Jadoon",
+    "driverName": "imran",
+    "driverPhone": "03112687138",
+    "startTime": "06:35",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Esa Lab 5 Star",
+        "sequence": 0,
+        "scheduledTime": "06:35",
+        "lat": 24.840795,
+        "lng": 67.096937
+      },
+      {
+        "name": "Donesil",
+        "sequence": 1,
+        "scheduledTime": "06:35",
+        "lat": 24.842306,
+        "lng": 67.119442
+      },
+      {
+        "name": "Landi Kotal",
+        "sequence": 2,
+        "scheduledTime": "06:37",
+        "lat": 24.844037,
+        "lng": 67.146106
+      },
+      {
+        "name": "Tahir Villas",
+        "sequence": 3,
+        "scheduledTime": "06:42",
+        "lat": 24.848082,
+        "lng": 67.169717
+      },
+      {
+        "name": "Shadab Masjid",
+        "sequence": 4,
+        "scheduledTime": "06:43",
+        "lat": 24.850954,
+        "lng": 67.193018
+      },
+      {
+        "name": "Gulberg Thana",
+        "sequence": 5,
+        "scheduledTime": "06:45",
+        "lat": 24.852023,
+        "lng": 67.21589
+      },
+      {
+        "name": "Shahzad Store",
+        "sequence": 6,
+        "scheduledTime": "06:47",
+        "lat": 24.854237,
+        "lng": 67.239765
+      },
+      {
+        "name": "Fast",
+        "sequence": 7,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:08",
+    "provider": "Jadoon",
+    "driverName": "Aman",
+    "driverPhone": "03302036783",
+    "startTime": "06:42",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "2k Stop",
+        "sequence": 0,
+        "scheduledTime": "06:42",
+        "lat": 24.933181,
+        "lng": 67.111252
+      },
+      {
+        "name": "Mateen food",
+        "sequence": 1,
+        "scheduledTime": "06:45",
+        "lat": 24.913464,
+        "lng": 67.149641
+      },
+      {
+        "name": "Dental College",
+        "sequence": 2,
+        "scheduledTime": "06:48",
+        "lat": 24.894685,
+        "lng": 67.188937
+      },
+      {
+        "name": "Green House",
+        "sequence": 3,
+        "scheduledTime": "06:50",
+        "lat": 24.877031,
+        "lng": 67.22619
+      },
+      {
+        "name": "Fast-Nu",
+        "sequence": 4,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:8B",
+    "provider": "Jadoon",
+    "driverName": "ataullah",
+    "driverPhone": "03257058239",
+    "startTime": "06:35",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Naya Nazimabad",
+        "sequence": 0,
+        "scheduledTime": "06:35",
+        "lat": 24.954749,
+        "lng": 67.153557
+      },
+      {
+        "name": "Nusrat Bhutto Colony",
+        "sequence": 1,
+        "scheduledTime": "06:40",
+        "lat": 24.92944,
+        "lng": 67.182205
+      },
+      {
+        "name": "Shadman 1",
+        "sequence": 2,
+        "scheduledTime": "06:45",
+        "lat": 24.907029,
+        "lng": 67.209987
+      },
+      {
+        "name": "Shadman 2",
+        "sequence": 3,
+        "scheduledTime": "06:46",
+        "lat": 24.882071,
+        "lng": 67.237125
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 4,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:9",
+    "provider": "Jadoon",
+    "driverName": "Aslam",
+    "driverPhone": "03171068856",
+    "startTime": "06:42",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Red house",
+        "sequence": 0,
+        "scheduledTime": "06:42",
+        "lat": 24.849965,
+        "lng": 67.144103
+      },
+      {
+        "name": "Mariya app",
+        "sequence": 1,
+        "scheduledTime": "06:43",
+        "lat": 24.851487,
+        "lng": 67.158563
+      },
+      {
+        "name": "Café Alhabib",
+        "sequence": 2,
+        "scheduledTime": "06:44",
+        "lat": 24.852941,
+        "lng": 67.172929
+      },
+      {
+        "name": "Café 2 days",
+        "sequence": 3,
+        "scheduledTime": "06:45",
+        "lat": 24.85227,
+        "lng": 67.190308
+      },
+      {
+        "name": "Namak bank",
+        "sequence": 4,
+        "scheduledTime": "06:46",
+        "lat": 24.853377,
+        "lng": 67.204952
+      },
+      {
+        "name": "Shafique more",
+        "sequence": 5,
+        "scheduledTime": "06:47",
+        "lat": 24.853166,
+        "lng": 67.218255
+      },
+      {
+        "name": "Power house",
+        "sequence": 6,
+        "scheduledTime": "06:48",
+        "lat": 24.856194,
+        "lng": 67.235517
+      },
+      {
+        "name": "Alnoor",
+        "sequence": 7,
+        "scheduledTime": "06:50",
+        "lat": 24.857498,
+        "lng": 67.248809
+      },
+      {
+        "name": "FAST NU",
+        "sequence": 8,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:9B",
+    "provider": "Jadoon",
+    "driverName": "Zahid",
+    "driverPhone": "03101249985",
+    "startTime": "06:40",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Masjid Khairul Bashir",
+        "sequence": 0,
+        "scheduledTime": "06:40",
+        "lat": 24.869754,
+        "lng": 67.133837
+      },
+      {
+        "name": "Cng Pump",
+        "sequence": 1,
+        "scheduledTime": "06:42",
+        "lat": 24.869375,
+        "lng": 67.151241
+      },
+      {
+        "name": "Usman Ghani Masjid",
+        "sequence": 2,
+        "scheduledTime": "06:44",
+        "lat": 24.866384,
+        "lng": 67.170251
+      },
+      {
+        "name": "Mochi Gali",
+        "sequence": 3,
+        "scheduledTime": "06:46",
+        "lat": 24.863471,
+        "lng": 67.190533
+      },
+      {
+        "name": "Shipowner",
+        "sequence": 4,
+        "scheduledTime": "06:48",
+        "lat": 24.863469,
+        "lng": 67.208876
+      },
+      {
+        "name": "Lady Bird",
+        "sequence": 5,
+        "scheduledTime": "06:50",
+        "lat": 24.861988,
+        "lng": 67.228277
+      },
+      {
+        "name": "Imam Clinic",
+        "sequence": 6,
+        "scheduledTime": "06:52",
+        "lat": 24.858255,
+        "lng": 67.247307
+      },
+      {
+        "name": "Fast",
+        "sequence": 7,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:10",
+    "provider": "Jadoon",
+    "driverName": "Wazir",
+    "driverPhone": "03135627896",
+    "startTime": "06:45",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Hayderi Supper Mart KDA",
+        "sequence": 0,
+        "scheduledTime": "06:45",
+        "lat": 24.886559,
+        "lng": 67.017198
+      },
+      {
+        "name": "Ziauddin",
+        "sequence": 1,
+        "scheduledTime": "06:48",
+        "lat": 24.88102,
+        "lng": 67.059442
+      },
+      {
+        "name": "Landikotal",
+        "sequence": 2,
+        "scheduledTime": "06:52",
+        "lat": 24.878139,
+        "lng": 67.099568
+      },
+      {
+        "name": "Tahir villas",
+        "sequence": 3,
+        "scheduledTime": "06:55",
+        "lat": 24.872451,
+        "lng": 67.141264
+      },
+      {
+        "name": "Ayesha Manzil More",
+        "sequence": 4,
+        "scheduledTime": "06:56",
+        "lat": 24.868011,
+        "lng": 67.181542
+      },
+      {
+        "name": "Naseer abad",
+        "sequence": 5,
+        "scheduledTime": "07:00",
+        "lat": 24.861272,
+        "lng": 67.224667
+      },
+      {
+        "name": "Fast",
+        "sequence": 6,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:17",
+    "provider": "Jadoon",
+    "driverName": "Fahad",
+    "driverPhone": "03041561262",
+    "startTime": "06:35",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Karimabad",
+        "sequence": 0,
+        "scheduledTime": "06:35",
+        "lat": 24.845484,
+        "lng": 67.164185
+      },
+      {
+        "name": "Ayesha Manzil",
+        "sequence": 1,
+        "scheduledTime": "06:37",
+        "lat": 24.848082,
+        "lng": 67.183551
+      },
+      {
+        "name": "Bhai jan Chowke",
+        "sequence": 2,
+        "scheduledTime": "06:39",
+        "lat": 24.850875,
+        "lng": 67.204467
+      },
+      {
+        "name": "8.5 Number",
+        "sequence": 3,
+        "scheduledTime": "06:40",
+        "lat": 24.852542,
+        "lng": 67.223618
+      },
+      {
+        "name": "Gulshan e Shameem",
+        "sequence": 4,
+        "scheduledTime": "06:43",
+        "lat": 24.856071,
+        "lng": 67.244422
+      },
+      {
+        "name": "Fast NU",
+        "sequence": 5,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:18",
+    "provider": "Jadoon",
+    "driverName": "Hasnain",
+    "driverPhone": "03132693179",
+    "startTime": "06:25",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "7 no Nazimabad",
+        "sequence": 0,
+        "scheduledTime": "06:25",
+        "lat": 24.838179,
+        "lng": 67.002802
+      },
+      {
+        "name": "Abbasi Hp",
+        "sequence": 1,
+        "scheduledTime": "06:27",
+        "lat": 24.841556,
+        "lng": 67.068391
+      },
+      {
+        "name": "Khilafat Chowke",
+        "sequence": 2,
+        "scheduledTime": "06:30",
+        "lat": 24.848385,
+        "lng": 67.13362
+      },
+      {
+        "name": "Board Office",
+        "sequence": 3,
+        "scheduledTime": "06:34",
+        "lat": 24.852629,
+        "lng": 67.19867
+      },
+      {
+        "name": "FAST NU",
+        "sequence": 4,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:20",
+    "provider": "Jadoon",
+    "driverName": "Shani",
+    "driverPhone": "03122068035",
+    "startTime": "06:25",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Bin Hashim",
+        "sequence": 0,
+        "scheduledTime": "06:25",
+        "lat": 24.902812,
+        "lng": 67.098466
+      },
+      {
+        "name": "Comander CNG",
+        "sequence": 1,
+        "scheduledTime": "06:30",
+        "lat": 24.895958,
+        "lng": 67.120965
+      },
+      {
+        "name": "Kazimabad",
+        "sequence": 2,
+        "scheduledTime": "06:45",
+        "lat": 24.890995,
+        "lng": 67.145321
+      },
+      {
+        "name": "Tank Chowke",
+        "sequence": 3,
+        "scheduledTime": "06:48",
+        "lat": 24.882544,
+        "lng": 67.169283
+      },
+      {
+        "name": "Model More",
+        "sequence": 4,
+        "scheduledTime": "06:50",
+        "lat": 24.877404,
+        "lng": 67.192217
+      },
+      {
+        "name": "Model Colony",
+        "sequence": 5,
+        "scheduledTime": "06:55",
+        "lat": 24.870466,
+        "lng": 67.215737
+      },
+      {
+        "name": "Baraf Khana to Kala board",
+        "sequence": 6,
+        "scheduledTime": "07:00",
+        "lat": 24.86451,
+        "lng": 67.240846
+      },
+      {
+        "name": "FASTNU",
+        "sequence": 7,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:23",
+    "provider": "Jadoon",
+    "driverName": "Adnan",
+    "driverPhone": "03032650959",
+    "startTime": "06:30",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Orangi Town # 5",
+        "sequence": 0,
+        "scheduledTime": "06:30",
+        "lat": 24.923787,
+        "lng": 67.030917
+      },
+      {
+        "name": "Abdullah College",
+        "sequence": 1,
+        "scheduledTime": "06:32",
+        "lat": 24.913809,
+        "lng": 67.068893
+      },
+      {
+        "name": "Katti Pahari",
+        "sequence": 2,
+        "scheduledTime": "06:36",
+        "lat": 24.900697,
+        "lng": 67.109181
+      },
+      {
+        "name": "Ali Asghar Stadium",
+        "sequence": 3,
+        "scheduledTime": "06:38",
+        "lat": 24.891497,
+        "lng": 67.146636
+      },
+      {
+        "name": "Star House",
+        "sequence": 4,
+        "scheduledTime": "06:40",
+        "lat": 24.879423,
+        "lng": 67.186115
+      },
+      {
+        "name": "LDA",
+        "sequence": 5,
+        "scheduledTime": "06:42",
+        "lat": 24.866671,
+        "lng": 67.224438
+      },
+      {
+        "name": "Fast NU",
+        "sequence": 6,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:23B",
+    "provider": "Jadoon",
+    "driverName": "Adnan",
+    "driverPhone": "03032650959",
+    "startTime": "06:35",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Javid Nihari",
+        "sequence": 0,
+        "scheduledTime": "06:35",
+        "lat": 24.850733,
+        "lng": 67.073233
+      },
+      {
+        "name": "Bhaijan Chowke",
+        "sequence": 1,
+        "scheduledTime": "06:40",
+        "lat": 24.852882,
+        "lng": 67.11067
+      },
+      {
+        "name": "Mukka Choke",
+        "sequence": 2,
+        "scheduledTime": "06:42",
+        "lat": 24.854203,
+        "lng": 67.150899
+      },
+      {
+        "name": "13D 8-1/2",
+        "sequence": 3,
+        "scheduledTime": "06:45",
+        "lat": 24.855317,
+        "lng": 67.189112
+      },
+      {
+        "name": "Rab Medical",
+        "sequence": 4,
+        "scheduledTime": "06:46",
+        "lat": 24.855752,
+        "lng": 67.225165
+      },
+      {
+        "name": "FASTNU",
+        "sequence": 5,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:24",
+    "provider": "Jadoon",
+    "driverName": "Javaid",
+    "driverPhone": "03002048247",
+    "startTime": "06:35",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Lala Zar Nipa",
+        "sequence": 0,
+        "scheduledTime": "06:35",
+        "lat": 24.947312,
+        "lng": 67.144091
+      },
+      {
+        "name": "Safari Park",
+        "sequence": 1,
+        "scheduledTime": "06:40",
+        "lat": 24.933684,
+        "lng": 67.164116
+      },
+      {
+        "name": "Samama",
+        "sequence": 2,
+        "scheduledTime": "06:43",
+        "lat": 24.916446,
+        "lng": 67.183443
+      },
+      {
+        "name": "Continental",
+        "sequence": 3,
+        "scheduledTime": "06:45",
+        "lat": 24.900902,
+        "lng": 67.205703
+      },
+      {
+        "name": "Kesc",
+        "sequence": 4,
+        "scheduledTime": "06:46",
+        "lat": 24.886617,
+        "lng": 67.223067
+      },
+      {
+        "name": "Johar Chowrangi",
+        "sequence": 5,
+        "scheduledTime": "06:55",
+        "lat": 24.870818,
+        "lng": 67.244364
+      },
+      {
+        "name": "Fast",
+        "sequence": 6,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:24B",
+    "provider": "Jadoon",
+    "driverName": "Wali",
+    "driverPhone": "03337291583",
+    "startTime": "06:48",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Kamran Chowrangi",
+        "sequence": 0,
+        "scheduledTime": "06:48",
+        "lat": 24.925718,
+        "lng": 67.00619
+      },
+      {
+        "name": "Munawar Chowrangi",
+        "sequence": 1,
+        "scheduledTime": "06:50",
+        "lat": 24.90748,
+        "lng": 67.070494
+      },
+      {
+        "name": "Darul Sehat",
+        "sequence": 2,
+        "scheduledTime": "06:52",
+        "lat": 24.890213,
+        "lng": 67.134836
+      },
+      {
+        "name": "Rado Center",
+        "sequence": 3,
+        "scheduledTime": "06:55",
+        "lat": 24.874765,
+        "lng": 67.199763
+      },
+      {
+        "name": "Fast",
+        "sequence": 4,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:25",
+    "provider": "Jadoon",
+    "driverName": "Sabir",
+    "driverPhone": "03101033697",
+    "startTime": "06:30",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Saima opposit Rizvia",
+        "sequence": 0,
+        "scheduledTime": "06:30",
+        "lat": 24.883454,
+        "lng": 67.17197
+      },
+      {
+        "name": "Al-Hira",
+        "sequence": 1,
+        "scheduledTime": "06:35",
+        "lat": 24.879772,
+        "lng": 67.183836
+      },
+      {
+        "name": "Puncture shop saadi road",
+        "sequence": 2,
+        "scheduledTime": "06:37",
+        "lat": 24.878121,
+        "lng": 67.196411
+      },
+      {
+        "name": "Amro society",
+        "sequence": 3,
+        "scheduledTime": "06:42",
+        "lat": 24.873483,
+        "lng": 67.207114
+      },
+      {
+        "name": "Sadi Town",
+        "sequence": 4,
+        "scheduledTime": "06:45",
+        "lat": 24.869753,
+        "lng": 67.219438
+      },
+      {
+        "name": "Police society",
+        "sequence": 5,
+        "scheduledTime": "06:48",
+        "lat": 24.867529,
+        "lng": 67.229863
+      },
+      {
+        "name": "Falcon",
+        "sequence": 6,
+        "scheduledTime": "07:00",
+        "lat": 24.864399,
+        "lng": 67.241901
+      },
+      {
+        "name": "6 No Check Post",
+        "sequence": 7,
+        "scheduledTime": "07:05",
+        "lat": 24.859446,
+        "lng": 67.254108
+      },
+      {
+        "name": "Fast",
+        "sequence": 8,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:25B",
+    "provider": "Jadoon",
+    "driverName": "Zakir",
+    "driverPhone": "03122937461",
+    "startTime": "06:30",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "KDA",
+        "sequence": 0,
+        "scheduledTime": "06:30",
+        "lat": 24.897061,
+        "lng": 67.098773
+      },
+      {
+        "name": "Malik Society",
+        "sequence": 1,
+        "scheduledTime": "06:31",
+        "lat": 24.893893,
+        "lng": 67.115723
+      },
+      {
+        "name": "KDA",
+        "sequence": 2,
+        "scheduledTime": "06:35",
+        "lat": 24.887579,
+        "lng": 67.136118
+      },
+      {
+        "name": "PCSR",
+        "sequence": 3,
+        "scheduledTime": "06:36",
+        "lat": 24.882873,
+        "lng": 67.154468
+      },
+      {
+        "name": "Queta town",
+        "sequence": 4,
+        "scheduledTime": "06:38",
+        "lat": 24.87858,
+        "lng": 67.17173
+      },
+      {
+        "name": "Sumaira Chowke",
+        "sequence": 5,
+        "scheduledTime": "06:43",
+        "lat": 24.875195,
+        "lng": 67.191893
+      },
+      {
+        "name": "Anara Garden",
+        "sequence": 6,
+        "scheduledTime": "06:45",
+        "lat": 24.870382,
+        "lng": 67.210185
+      },
+      {
+        "name": "Noman Garden",
+        "sequence": 7,
+        "scheduledTime": "06:47",
+        "lat": 24.865618,
+        "lng": 67.226386
+      },
+      {
+        "name": "Al Azhar",
+        "sequence": 8,
+        "scheduledTime": "06:50",
+        "lat": 24.86186,
+        "lng": 67.246165
+      },
+      {
+        "name": "Fast",
+        "sequence": 9,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:26",
+    "provider": "Jadoon",
+    "driverName": "Zeeshan2",
+    "driverPhone": "03158822481",
+    "startTime": "06:45",
+    "endTime": "07:45",
+    "stops": [
+      {
+        "name": "Ned",
+        "sequence": 0,
+        "scheduledTime": "06:45",
+        "lat": 24.90941,
+        "lng": 67.068696
+      },
+      {
+        "name": "Karachi University",
+        "sequence": 1,
+        "scheduledTime": "06:45",
+        "lat": 24.895032,
+        "lng": 67.118776
+      },
+      {
+        "name": "Comander CNG",
+        "sequence": 2,
+        "scheduledTime": "06:47",
+        "lat": 24.884171,
+        "lng": 67.165877
+      },
+      {
+        "name": "G-10 Gull House",
+        "sequence": 3,
+        "scheduledTime": "06:57",
+        "lat": 24.869313,
+        "lng": 67.215345
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 4,
+        "scheduledTime": "07:45",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:26b",
+    "provider": "Jadoon",
+    "driverName": "Fariya chowke",
+    "driverPhone": null,
+    "startTime": "06:40",
+    "endTime": "07:00",
+    "stops": [
+      {
+        "name": "Khatam.e.Nabovat",
+        "sequence": 0,
+        "scheduledTime": "06:40",
+        "lat": 24.949485,
+        "lng": 67.166613
+      },
+      {
+        "name": "Kaneez Fatima",
+        "sequence": 1,
+        "scheduledTime": "06:41",
+        "lat": 24.938391,
+        "lng": 67.179029
+      },
+      {
+        "name": "Madras Chowke",
+        "sequence": 2,
+        "scheduledTime": "06:42",
+        "lat": 24.925924,
+        "lng": 67.189942
+      },
+      {
+        "name": "Dow Medical",
+        "sequence": 3,
+        "scheduledTime": "06:45",
+        "lat": 24.915431,
+        "lng": 67.202276
+      },
+      {
+        "name": "Mosamiyat",
+        "sequence": 4,
+        "scheduledTime": "06:48",
+        "lat": 24.903447,
+        "lng": 67.214965
+      },
+      {
+        "name": "Johar complex (Bin Hashim)",
+        "sequence": 5,
+        "scheduledTime": "06:50",
+        "lat": 24.890235,
+        "lng": 67.22657
+      },
+      {
+        "name": "Safora",
+        "sequence": 6,
+        "scheduledTime": "06:52",
+        "lat": 24.880134,
+        "lng": 67.239134
+      },
+      {
+        "name": "Check Post 5",
+        "sequence": 7,
+        "scheduledTime": "06:55",
+        "lat": 24.869057,
+        "lng": 67.253183
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 8,
+        "scheduledTime": "07:00",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Jadoon R:27",
+    "provider": "Jadoon",
+    "driverName": "Dentist Society",
+    "driverPhone": null,
+    "startTime": "06:30",
+    "endTime": "07:00",
+    "stops": [
+      {
+        "name": "Officers Society",
+        "sequence": 0,
+        "scheduledTime": "06:30",
+        "lat": 24.937891,
+        "lng": 67.030357
+      },
+      {
+        "name": "Teacher Society",
+        "sequence": 1,
+        "scheduledTime": "06:31",
+        "lat": 24.928921,
+        "lng": 67.060623
+      },
+      {
+        "name": "Madras Chowke",
+        "sequence": 2,
+        "scheduledTime": "06:33",
+        "lat": 24.916332,
+        "lng": 67.087481
+      },
+      {
+        "name": "Suchal",
+        "sequence": 3,
+        "scheduledTime": "06:35",
+        "lat": 24.908031,
+        "lng": 67.11887
+      },
+      {
+        "name": "Furniture Markit",
+        "sequence": 4,
+        "scheduledTime": "06:40",
+        "lat": 24.897134,
+        "lng": 67.147652
+      },
+      {
+        "name": "Rizvia",
+        "sequence": 5,
+        "scheduledTime": "06:43",
+        "lat": 24.888323,
+        "lng": 67.177903
+      },
+      {
+        "name": "Gulshan Umair",
+        "sequence": 6,
+        "scheduledTime": "06:48",
+        "lat": 24.87584,
+        "lng": 67.206055
+      },
+      {
+        "name": "Saima",
+        "sequence": 7,
+        "scheduledTime": "06:55",
+        "lat": 24.868427,
+        "lng": 67.234861
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 8,
+        "scheduledTime": "07:00",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 1",
+    "provider": "Nadeem",
+    "driverName": "ASAD",
+    "driverPhone": "03142308675",
+    "startTime": "6:55 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Malir Cantt Askari-V",
+        "sequence": 0,
+        "scheduledTime": "6:55 am",
+        "lat": 24.9082,
+        "lng": 67.2023
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 1,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 1-B",
+    "provider": "Nadeem",
+    "driverName": "NAVEED",
+    "driverPhone": "03122874142",
+    "startTime": "6:45 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Malir Cantt Phase-I",
+        "sequence": 0,
+        "scheduledTime": "6:45 am",
+        "lat": 24.9082,
+        "lng": 67.2023
+      },
+      {
+        "name": "Sector - G",
+        "sequence": 1,
+        "scheduledTime": "6:46 am",
+        "lat": 24.90314,
+        "lng": 67.210573
+      },
+      {
+        "name": "Sector - J",
+        "sequence": 2,
+        "scheduledTime": "6:51 am",
+        "lat": 24.898109,
+        "lng": 67.216202
+      },
+      {
+        "name": "Falcon",
+        "sequence": 3,
+        "scheduledTime": "6:56 am",
+        "lat": 24.891604,
+        "lng": 67.22175
+      },
+      {
+        "name": "CMH",
+        "sequence": 4,
+        "scheduledTime": "6:57 am",
+        "lat": 24.884171,
+        "lng": 67.22937
+      },
+      {
+        "name": "Cantt. Bazaar",
+        "sequence": 5,
+        "scheduledTime": "7:02 am",
+        "lat": 24.878429,
+        "lng": 67.237327
+      },
+      {
+        "name": "Tank Chowk",
+        "sequence": 6,
+        "scheduledTime": "7:05 am",
+        "lat": 24.874919,
+        "lng": 67.243148
+      },
+      {
+        "name": "Tariq Bin Zaid Society",
+        "sequence": 7,
+        "scheduledTime": "7:07 am",
+        "lat": 24.869326,
+        "lng": 67.251755
+      },
+      {
+        "name": "Security Printing Press",
+        "sequence": 8,
+        "scheduledTime": "7:08 am",
+        "lat": 24.861611,
+        "lng": 67.258093
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 9,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 11",
+    "provider": "Nadeem",
+    "driverName": "JAHANZEB",
+    "driverPhone": "03212618936",
+    "startTime": "6:40 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Soldier Bazar",
+        "sequence": 0,
+        "scheduledTime": "6:40 am",
+        "lat": 24.8722,
+        "lng": 67.0264
+      },
+      {
+        "name": "Guro Mandir",
+        "sequence": 1,
+        "scheduledTime": "6:43 am",
+        "lat": 24.86932,
+        "lng": 67.085529
+      },
+      {
+        "name": "Islamiaya College",
+        "sequence": 2,
+        "scheduledTime": "6:45 am",
+        "lat": 24.864968,
+        "lng": 67.146492
+      },
+      {
+        "name": "Stadium Road",
+        "sequence": 3,
+        "scheduledTime": "6:55 am",
+        "lat": 24.86034,
+        "lng": 67.20434
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 4,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 12",
+    "provider": "Nadeem",
+    "driverName": "HASSAN",
+    "driverPhone": "03121042053",
+    "startTime": "6:52 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Khudadad Colony",
+        "sequence": 0,
+        "scheduledTime": "6:52 am",
+        "lat": 24.851349,
+        "lng": 67.032584
+      },
+      {
+        "name": "Kashmir Road",
+        "sequence": 1,
+        "scheduledTime": "6:54 am",
+        "lat": 24.853007,
+        "lng": 67.07177
+      },
+      {
+        "name": "Sir Syed Road",
+        "sequence": 2,
+        "scheduledTime": "6:57 am",
+        "lat": 24.853299,
+        "lng": 67.110837
+      },
+      {
+        "name": "Khalid Bin Waleed Road",
+        "sequence": 3,
+        "scheduledTime": "6:59 am",
+        "lat": 24.853592,
+        "lng": 67.148772
+      },
+      {
+        "name": "Tariq Road",
+        "sequence": 4,
+        "scheduledTime": "7:01 am",
+        "lat": 24.854518,
+        "lng": 67.187967
+      },
+      {
+        "name": "Tipu Sultan Road",
+        "sequence": 5,
+        "scheduledTime": "7:08 am",
+        "lat": 24.855928,
+        "lng": 67.225682
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 6,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 13",
+    "provider": "Nadeem",
+    "driverName": "IMTIAZ",
+    "driverPhone": "03006390409",
+    "startTime": "6:57 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Esa Nagri",
+        "sequence": 0,
+        "scheduledTime": "6:57 am",
+        "lat": 24.848499,
+        "lng": 67.153881
+      },
+      {
+        "name": "Mashriq Centre",
+        "sequence": 1,
+        "scheduledTime": "6:59 am",
+        "lat": 24.850789,
+        "lng": 67.173122
+      },
+      {
+        "name": "Stadium",
+        "sequence": 2,
+        "scheduledTime": "7:00 am",
+        "lat": 24.850843,
+        "lng": 67.191929
+      },
+      {
+        "name": "Dalmia",
+        "sequence": 3,
+        "scheduledTime": "7:03 am",
+        "lat": 24.852927,
+        "lng": 67.20966
+      },
+      {
+        "name": "Millennium",
+        "sequence": 4,
+        "scheduledTime": "7:05 am",
+        "lat": 24.854779,
+        "lng": 67.227724
+      },
+      {
+        "name": "Malir 15",
+        "sequence": 5,
+        "scheduledTime": "7:25 am",
+        "lat": 24.855944,
+        "lng": 67.246343
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 6,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 14",
+    "provider": "Nadeem",
+    "driverName": "ADNAN",
+    "driverPhone": "03432612271",
+    "startTime": "6:45 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Old Sabzi Mandi",
+        "sequence": 0,
+        "scheduledTime": "6:45 am",
+        "lat": 24.935949,
+        "lng": 67.12416
+      },
+      {
+        "name": "Sharfabad",
+        "sequence": 1,
+        "scheduledTime": "6:48 am",
+        "lat": 24.920244,
+        "lng": 67.153449
+      },
+      {
+        "name": "Bahadurabad",
+        "sequence": 2,
+        "scheduledTime": "6:50 am",
+        "lat": 24.903507,
+        "lng": 67.180985
+      },
+      {
+        "name": "Ragoon Wala Hall",
+        "sequence": 3,
+        "scheduledTime": "6:55 am",
+        "lat": 24.887638,
+        "lng": 67.207663
+      },
+      {
+        "name": "Karsaz Pankha Stop",
+        "sequence": 4,
+        "scheduledTime": "7:00 am",
+        "lat": 24.872126,
+        "lng": 67.237124
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 5,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 15",
+    "provider": "Nadeem",
+    "driverName": "JAHANZAIB",
+    "driverPhone": "03158781932",
+    "startTime": "6:35 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Forum Shopping Mall",
+        "sequence": 0,
+        "scheduledTime": "6:35 am",
+        "lat": 24.904617,
+        "lng": 67.143331
+      },
+      {
+        "name": "ZamZama",
+        "sequence": 1,
+        "scheduledTime": "6:40 am",
+        "lat": 24.898065,
+        "lng": 67.162296
+      },
+      {
+        "name": "Gizri",
+        "sequence": 2,
+        "scheduledTime": "6:50 am",
+        "lat": 24.889018,
+        "lng": 67.182443
+      },
+      {
+        "name": "Phase – IV",
+        "sequence": 3,
+        "scheduledTime": "7:00 am",
+        "lat": 24.881107,
+        "lng": 67.204126
+      },
+      {
+        "name": "Sunset Club",
+        "sequence": 4,
+        "scheduledTime": "7:02 am",
+        "lat": 24.873311,
+        "lng": 67.224605
+      },
+      {
+        "name": "KFC Phase – II",
+        "sequence": 5,
+        "scheduledTime": "7:05 am",
+        "lat": 24.866237,
+        "lng": 67.2448
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 6,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 16",
+    "provider": "Nadeem",
+    "driverName": "SHAHZAD IQBAL",
+    "driverPhone": "03123311482",
+    "startTime": "6:35 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Hyper Star",
+        "sequence": 0,
+        "scheduledTime": "6:35 am",
+        "lat": 24.833328,
+        "lng": 67.086072
+      },
+      {
+        "name": "Kh. Mujahid",
+        "sequence": 1,
+        "scheduledTime": "6:40 am",
+        "lat": 24.838473,
+        "lng": 67.121916
+      },
+      {
+        "name": "Saba Avenue",
+        "sequence": 2,
+        "scheduledTime": "6:45 am",
+        "lat": 24.84389,
+        "lng": 67.156509
+      },
+      {
+        "name": "Kh. Bukhari",
+        "sequence": 3,
+        "scheduledTime": "6:50 am",
+        "lat": 24.84665,
+        "lng": 67.193458
+      },
+      {
+        "name": "Kh. Ittehad",
+        "sequence": 4,
+        "scheduledTime": "6:55 am",
+        "lat": 24.851826,
+        "lng": 67.229815
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 5,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 19",
+    "provider": "Nadeem",
+    "driverName": "MOLA BAKHSH",
+    "driverPhone": "03158339958",
+    "startTime": "6:50 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Hassan Square",
+        "sequence": 0,
+        "scheduledTime": "6:50 am",
+        "lat": 24.9036,
+        "lng": 67.0781
+      },
+      {
+        "name": "Mumtaz Manzil",
+        "sequence": 1,
+        "scheduledTime": "6:52 am",
+        "lat": 24.89295,
+        "lng": 67.115072
+      },
+      {
+        "name": "Bait-Ul-Mukarram",
+        "sequence": 2,
+        "scheduledTime": "6:55 am",
+        "lat": 24.885982,
+        "lng": 67.151359
+      },
+      {
+        "name": "Urdu Science College",
+        "sequence": 3,
+        "scheduledTime": "6:57 am",
+        "lat": 24.874858,
+        "lng": 67.189215
+      },
+      {
+        "name": "Aziz Bhatti Park",
+        "sequence": 4,
+        "scheduledTime": "7:00 am",
+        "lat": 24.866154,
+        "lng": 67.227389
+      },
+      {
+        "name": "FAST NU",
+        "sequence": 5,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 21",
+    "provider": "Nadeem",
+    "driverName": "ABID",
+    "driverPhone": "03112010700",
+    "startTime": "6:45 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Tower",
+        "sequence": 0,
+        "scheduledTime": "6:45 am",
+        "lat": 24.8485,
+        "lng": 67.0012
+      },
+      {
+        "name": "Jang Press",
+        "sequence": 1,
+        "scheduledTime": "6:48 am",
+        "lat": 24.850138,
+        "lng": 67.039158
+      },
+      {
+        "name": "Sindh Secretariat",
+        "sequence": 2,
+        "scheduledTime": "6:50 am",
+        "lat": 24.851561,
+        "lng": 67.076645
+      },
+      {
+        "name": "Attrium Mall",
+        "sequence": 3,
+        "scheduledTime": "6:53 am",
+        "lat": 24.850666,
+        "lng": 67.113672
+      },
+      {
+        "name": "Lucky Star",
+        "sequence": 4,
+        "scheduledTime": "6:55 am",
+        "lat": 24.853919,
+        "lng": 67.15299
+      },
+      {
+        "name": "FTC",
+        "sequence": 5,
+        "scheduledTime": "6:58 am",
+        "lat": 24.85537,
+        "lng": 67.190367
+      },
+      {
+        "name": "Shahrah-e-Faisal Nursery",
+        "sequence": 6,
+        "scheduledTime": "7:00 am",
+        "lat": 24.85664,
+        "lng": 67.226954
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 7,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 28",
+    "provider": "Nadeem",
+    "driverName": "KHURRAM",
+    "driverPhone": "03119287123",
+    "startTime": "6:55 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "FTC",
+        "sequence": 0,
+        "scheduledTime": "6:55 am",
+        "lat": 24.854,
+        "lng": 67.0505
+      },
+      {
+        "name": "Sindhi Muslim Soc",
+        "sequence": 1,
+        "scheduledTime": "6:57 am",
+        "lat": 24.853704,
+        "lng": 67.081658
+      },
+      {
+        "name": "Allah Wala Chorangi",
+        "sequence": 2,
+        "scheduledTime": "6:59 am",
+        "lat": 24.854416,
+        "lng": 67.111464
+      },
+      {
+        "name": "Nursery",
+        "sequence": 3,
+        "scheduledTime": "7:02 am",
+        "lat": 24.854243,
+        "lng": 67.142265
+      },
+      {
+        "name": "Lal Kothi",
+        "sequence": 4,
+        "scheduledTime": "7:04 am",
+        "lat": 24.854727,
+        "lng": 67.172206
+      },
+      {
+        "name": "Awami Markaz",
+        "sequence": 5,
+        "scheduledTime": "7:08 am",
+        "lat": 24.857301,
+        "lng": 67.204523
+      },
+      {
+        "name": "NHS – IV",
+        "sequence": 6,
+        "scheduledTime": "7:10 am",
+        "lat": 24.856904,
+        "lng": 67.233242
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 7,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 29",
+    "provider": "Nadeem",
+    "driverName": "ABID",
+    "driverPhone": "03101219500",
+    "startTime": "7:10 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "X-20 Malir Cantt.",
+        "sequence": 0,
+        "scheduledTime": "7:10 am",
+        "lat": 24.9082,
+        "lng": 67.2023
+      },
+      {
+        "name": "Cantt. Bazar",
+        "sequence": 1,
+        "scheduledTime": "7:12 am",
+        "lat": 24.895039,
+        "lng": 67.218976
+      },
+      {
+        "name": "CP – 02",
+        "sequence": 2,
+        "scheduledTime": "7:15 am",
+        "lat": 24.881857,
+        "lng": 67.234619
+      },
+      {
+        "name": "Qazimabad No. 4",
+        "sequence": 3,
+        "scheduledTime": "7:20 am",
+        "lat": 24.869311,
+        "lng": 67.249232
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 4,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 30",
+    "provider": "Nadeem",
+    "driverName": "FAREED",
+    "driverPhone": "03121220309",
+    "startTime": "6:45 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Jahangirabad",
+        "sequence": 0,
+        "scheduledTime": "6:45 am",
+        "lat": 24.830579,
+        "lng": 67.013412
+      },
+      {
+        "name": "Golimar Chowrangi",
+        "sequence": 1,
+        "scheduledTime": "6:46 am",
+        "lat": 24.835374,
+        "lng": 67.050221
+      },
+      {
+        "name": "Urdu Bazar Nazimabad",
+        "sequence": 2,
+        "scheduledTime": "6:49 am",
+        "lat": 24.83675,
+        "lng": 67.085661
+      },
+      {
+        "name": "Inquiry Office",
+        "sequence": 3,
+        "scheduledTime": "6:50 am",
+        "lat": 24.842357,
+        "lng": 67.120386
+      },
+      {
+        "name": "Naz Petrol Pump",
+        "sequence": 4,
+        "scheduledTime": "6:51 am",
+        "lat": 24.844567,
+        "lng": 67.158022
+      },
+      {
+        "name": "Sona Chandi Lawn",
+        "sequence": 5,
+        "scheduledTime": "6:52 am",
+        "lat": 24.848114,
+        "lng": 67.193388
+      },
+      {
+        "name": "Liaquatabad Erum Bakery",
+        "sequence": 6,
+        "scheduledTime": "6:53 am",
+        "lat": 24.851989,
+        "lng": 67.229391
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 7,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 31",
+    "provider": "Nadeem",
+    "driverName": "WAJID",
+    "driverPhone": "03209204914",
+    "startTime": "6:50 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "KPT Bridge",
+        "sequence": 0,
+        "scheduledTime": "6:50 am",
+        "lat": 24.8252,
+        "lng": 67.0543
+      },
+      {
+        "name": "Iqra University",
+        "sequence": 1,
+        "scheduledTime": "6:52 am",
+        "lat": 24.831837,
+        "lng": 67.107181
+      },
+      {
+        "name": "Manzoor Colony",
+        "sequence": 2,
+        "scheduledTime": "6:55 am",
+        "lat": 24.841623,
+        "lng": 67.16033
+      },
+      {
+        "name": "PAF Chapter",
+        "sequence": 3,
+        "scheduledTime": "7:00 am",
+        "lat": 24.849616,
+        "lng": 67.212709
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 4,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 32",
+    "provider": "Nadeem",
+    "driverName": "SAMEER",
+    "driverPhone": "03171037568",
+    "startTime": "6:30 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Tyre Company",
+        "sequence": 0,
+        "scheduledTime": "6:30 am",
+        "lat": 24.839284,
+        "lng": 67.118955
+      },
+      {
+        "name": "Boat Basin",
+        "sequence": 1,
+        "scheduledTime": "6:33 am",
+        "lat": 24.840925,
+        "lng": 67.136649
+      },
+      {
+        "name": "Bilawal Chowrangi",
+        "sequence": 2,
+        "scheduledTime": "6:35 am",
+        "lat": 24.842212,
+        "lng": 67.154865
+      },
+      {
+        "name": "26 Street",
+        "sequence": 3,
+        "scheduledTime": "6:40 am",
+        "lat": 24.845955,
+        "lng": 67.172234
+      },
+      {
+        "name": "Badar Commercial",
+        "sequence": 4,
+        "scheduledTime": "6:45 am",
+        "lat": 24.846695,
+        "lng": 67.19094
+      },
+      {
+        "name": "Khayaban-e-Sehar",
+        "sequence": 5,
+        "scheduledTime": "6:50 am",
+        "lat": 24.851416,
+        "lng": 67.210323
+      },
+      {
+        "name": "Nexer College",
+        "sequence": 6,
+        "scheduledTime": "6:52 am",
+        "lat": 24.85222,
+        "lng": 67.227618
+      },
+      {
+        "name": "Khayaban-e-Shahbaz",
+        "sequence": 7,
+        "scheduledTime": "6:55 am",
+        "lat": 24.854588,
+        "lng": 67.246934
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 8,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 33",
+    "provider": "Nadeem",
+    "driverName": "SHAHBAZ",
+    "driverPhone": "03131085542",
+    "startTime": "6:50 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Liaquat 10. No.",
+        "sequence": 0,
+        "scheduledTime": "6:50 am",
+        "lat": 24.834088,
+        "lng": 67.162272
+      },
+      {
+        "name": "Usman Memmoiral",
+        "sequence": 1,
+        "scheduledTime": "6:53 am",
+        "lat": 24.838088,
+        "lng": 67.183761
+      },
+      {
+        "name": "Saylani Chowk",
+        "sequence": 2,
+        "scheduledTime": "7:00 am",
+        "lat": 24.843935,
+        "lng": 67.202769
+      },
+      {
+        "name": "Zubaida Hospital",
+        "sequence": 3,
+        "scheduledTime": "7:03 am",
+        "lat": 24.846371,
+        "lng": 67.223713
+      },
+      {
+        "name": "M. Ali Society",
+        "sequence": 4,
+        "scheduledTime": "7:05 am",
+        "lat": 24.851376,
+        "lng": 67.24321
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 5,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 34",
+    "provider": "Nadeem",
+    "driverName": "SAAD JAVED",
+    "driverPhone": "03142145992",
+    "startTime": "7:10 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Korangi Crossing",
+        "sequence": 0,
+        "scheduledTime": "7:10 am",
+        "lat": 24.82,
+        "lng": 67.12
+      },
+      {
+        "name": "Nasir Jump",
+        "sequence": 1,
+        "scheduledTime": "7:12 am",
+        "lat": 24.826047,
+        "lng": 67.144856
+      },
+      {
+        "name": "Korangi No. 2",
+        "sequence": 2,
+        "scheduledTime": "7:15 am",
+        "lat": 24.831455,
+        "lng": 67.169436
+      },
+      {
+        "name": "Korangi No. 5",
+        "sequence": 3,
+        "scheduledTime": "7:19 am",
+        "lat": 24.838576,
+        "lng": 67.193606
+      },
+      {
+        "name": "Landhi No. 4",
+        "sequence": 4,
+        "scheduledTime": "7:25 am",
+        "lat": 24.843211,
+        "lng": 67.216577
+      },
+      {
+        "name": "Landhi 89",
+        "sequence": 5,
+        "scheduledTime": "7:27 am",
+        "lat": 24.852127,
+        "lng": 67.241411
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 6,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 35 (BUS)",
+    "provider": "Nadeem",
+    "driverName": "AFAQ BHAI",
+    "driverPhone": "03152476345",
+    "startTime": "6:50 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Teen Talwar",
+        "sequence": 0,
+        "scheduledTime": "6:50 am",
+        "lat": 24.834,
+        "lng": 67.0328
+      },
+      {
+        "name": "Race Course",
+        "sequence": 1,
+        "scheduledTime": "6:51 am",
+        "lat": 24.83745,
+        "lng": 67.07911
+      },
+      {
+        "name": "Cant Station",
+        "sequence": 2,
+        "scheduledTime": "6:53 am",
+        "lat": 24.842187,
+        "lng": 67.126799
+      },
+      {
+        "name": "Askari – II & III",
+        "sequence": 3,
+        "scheduledTime": "6:55 am",
+        "lat": 24.846838,
+        "lng": 67.170766
+      },
+      {
+        "name": "NMC",
+        "sequence": 4,
+        "scheduledTime": "6:58 am",
+        "lat": 24.852026,
+        "lng": 67.218093
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 5,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 36",
+    "provider": "Nadeem",
+    "driverName": "SHAKIR",
+    "driverPhone": "03083386922",
+    "startTime": "6:35 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Police Head Quarter Garden",
+        "sequence": 0,
+        "scheduledTime": "6:35 am",
+        "lat": 24.834439,
+        "lng": 67.133491
+      },
+      {
+        "name": "Uncle Sariya",
+        "sequence": 1,
+        "scheduledTime": "6:37 am",
+        "lat": 24.837184,
+        "lng": 67.152109
+      },
+      {
+        "name": "Mobile Market",
+        "sequence": 2,
+        "scheduledTime": "6:40 am",
+        "lat": 24.841014,
+        "lng": 67.170787
+      },
+      {
+        "name": "Naz Plaza",
+        "sequence": 3,
+        "scheduledTime": "6:42 am",
+        "lat": 24.844199,
+        "lng": 67.19113
+      },
+      {
+        "name": "Numaish",
+        "sequence": 4,
+        "scheduledTime": "6:45 am",
+        "lat": 24.847872,
+        "lng": 67.208959
+      },
+      {
+        "name": "Islamia College",
+        "sequence": 5,
+        "scheduledTime": "6:50 am",
+        "lat": 24.849657,
+        "lng": 67.227713
+      },
+      {
+        "name": "New Town Chandni Chowk",
+        "sequence": 6,
+        "scheduledTime": "6:53 am",
+        "lat": 24.853653,
+        "lng": 67.246543
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 7,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 37",
+    "provider": "Nadeem",
+    "driverName": "IMTIAZ BALOCH",
+    "driverPhone": "03232910386",
+    "startTime": "6:40 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Ram Sawami",
+        "sequence": 0,
+        "scheduledTime": "6:40 am",
+        "lat": 24.837523,
+        "lng": 67.161077
+      },
+      {
+        "name": "Garden Zoo",
+        "sequence": 1,
+        "scheduledTime": "6:42 am",
+        "lat": 24.841925,
+        "lng": 67.18282
+      },
+      {
+        "name": "Ali Bhai",
+        "sequence": 2,
+        "scheduledTime": "6:45 am",
+        "lat": 24.846152,
+        "lng": 67.20172
+      },
+      {
+        "name": "Khudadad Colony",
+        "sequence": 3,
+        "scheduledTime": "6:55 am",
+        "lat": 24.850279,
+        "lng": 67.223753
+      },
+      {
+        "name": "Noorani Kabab",
+        "sequence": 4,
+        "scheduledTime": "6:57 am",
+        "lat": 24.853207,
+        "lng": 67.244876
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 5,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 37-B",
+    "provider": "Nadeem",
+    "driverName": "KHALID",
+    "driverPhone": "03112551794",
+    "startTime": "6:45 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Garden Jamat Khan",
+        "sequence": 0,
+        "scheduledTime": "6:45 am",
+        "lat": 24.861105,
+        "lng": 67.006756
+      },
+      {
+        "name": "Fatmi Blood Bank",
+        "sequence": 1,
+        "scheduledTime": "6:47 am",
+        "lat": 24.860274,
+        "lng": 67.072411
+      },
+      {
+        "name": "Khurasan",
+        "sequence": 2,
+        "scheduledTime": "6:48 am",
+        "lat": 24.86032,
+        "lng": 67.134682
+      },
+      {
+        "name": "Numaish",
+        "sequence": 3,
+        "scheduledTime": "6:52 am",
+        "lat": 24.858191,
+        "lng": 67.19975
+      },
+      {
+        "name": "Fast Nu",
+        "sequence": 4,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 38",
+    "provider": "Nadeem",
+    "driverName": "FAISAL",
+    "driverPhone": "03313147764",
+    "startTime": "6:50 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Bacha Party",
+        "sequence": 0,
+        "scheduledTime": "6:50 am",
+        "lat": 24.853426,
+        "lng": 67.171521
+      },
+      {
+        "name": "Punjab Chowrangi PSO Pump",
+        "sequence": 1,
+        "scheduledTime": "6:52 am",
+        "lat": 24.854914,
+        "lng": 67.188886
+      },
+      {
+        "name": "Chandio Village",
+        "sequence": 2,
+        "scheduledTime": "6:53 am",
+        "lat": 24.854901,
+        "lng": 67.210244
+      },
+      {
+        "name": "Altamash",
+        "sequence": 3,
+        "scheduledTime": "6:55 am",
+        "lat": 24.856825,
+        "lng": 67.227894
+      },
+      {
+        "name": "Nadra Mega Center Phase – I",
+        "sequence": 4,
+        "scheduledTime": "7:00 am",
+        "lat": 24.855424,
+        "lng": 67.244673
+      },
+      {
+        "name": "FAST NU",
+        "sequence": 5,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 39",
+    "provider": "Nadeem",
+    "driverName": "SOHAIL",
+    "driverPhone": "03262028524",
+    "startTime": "6:52 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Perfume Chowk Johar",
+        "sequence": 0,
+        "scheduledTime": "6:52 am",
+        "lat": 24.91,
+        "lng": 67.12
+      },
+      {
+        "name": "Hilltop",
+        "sequence": 1,
+        "scheduledTime": "6:53 am",
+        "lat": 24.902126,
+        "lng": 67.144399
+      },
+      {
+        "name": "Johar More",
+        "sequence": 2,
+        "scheduledTime": "6:55 am",
+        "lat": 24.891992,
+        "lng": 67.168142
+      },
+      {
+        "name": "Drig Road",
+        "sequence": 3,
+        "scheduledTime": "6:57 am",
+        "lat": 24.883563,
+        "lng": 67.193189
+      },
+      {
+        "name": "Colony Gate",
+        "sequence": 4,
+        "scheduledTime": "6:59 am",
+        "lat": 24.87557,
+        "lng": 67.21532
+      },
+      {
+        "name": "Star Gate",
+        "sequence": 5,
+        "scheduledTime": "7:00 am",
+        "lat": 24.866616,
+        "lng": 67.241343
+      },
+      {
+        "name": "FAST NU",
+        "sequence": 6,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 40",
+    "provider": "Nadeem",
+    "driverName": "ATIQ",
+    "driverPhone": "03102710612",
+    "startTime": "7:00 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Matka Stop",
+        "sequence": 0,
+        "scheduledTime": "7:00 am",
+        "lat": 24.941885,
+        "lng": 67.031216
+      },
+      {
+        "name": "Ala Din Park",
+        "sequence": 1,
+        "scheduledTime": "7:02 am",
+        "lat": 24.913207,
+        "lng": 67.108121
+      },
+      {
+        "name": "Lal Flat",
+        "sequence": 2,
+        "scheduledTime": "7:03 am",
+        "lat": 24.884855,
+        "lng": 67.185495
+      },
+      {
+        "name": "FAST NU",
+        "sequence": 3,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 41",
+    "provider": "Nadeem",
+    "driverName": "WASEEM",
+    "driverPhone": "03274848370",
+    "startTime": "6:45 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "Bahria Town Adventure Park",
+        "sequence": 0,
+        "scheduledTime": "6:45 am",
+        "lat": 24.988,
+        "lng": 67.452
+      },
+      {
+        "name": "Bahria International Hospital Bahria Town Apartments Tower 15 Bahria Town Apartments Tower 20 Dolmen Mall Tauheed Square Bahria Town Main Gate Malir Cant Link Road Malir Check Post – 5 Malir Check Post – 6 Malir Halt FAST NU",
+        "sequence": 1,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  },
+  {
+    "code": "Nadeem R: 42",
+    "provider": "Nadeem",
+    "driverName": "SHOAIB",
+    "driverPhone": "03110821801",
+    "startTime": "6:45 am",
+    "endTime": "7:45 am",
+    "stops": [
+      {
+        "name": "New Town Masjid",
+        "sequence": 0,
+        "scheduledTime": "6:45 am",
+        "lat": 24.849826,
+        "lng": 67.129328
+      },
+      {
+        "name": "Jamshed Road",
+        "sequence": 1,
+        "scheduledTime": "6:46 am",
+        "lat": 24.852231,
+        "lng": 67.154991
+      },
+      {
+        "name": "Yadgar Fish",
+        "sequence": 2,
+        "scheduledTime": "6:48 am",
+        "lat": 24.852039,
+        "lng": 67.183969
+      },
+      {
+        "name": "New Town Chandni Chowk",
+        "sequence": 3,
+        "scheduledTime": "6:52 am",
+        "lat": 24.854541,
+        "lng": 67.210313
+      },
+      {
+        "name": "Askari – IV",
+        "sequence": 4,
+        "scheduledTime": "7:05 am",
+        "lat": 24.85537,
+        "lng": 67.237278
+      },
+      {
+        "name": "FAST NU",
+        "sequence": 5,
+        "scheduledTime": "7:45 am",
+        "lat": 24.8569,
+        "lng": 67.2647
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+node_modules/
+.pnpm-store/
+dist/
+.env
+
+apps/*/dist/
+packages/*/dist/
+apps/api/src/db/seeds/output/
+
+*.log
+.next/
