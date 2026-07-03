@@ -1,4 +1,5 @@
 import http from "node:http";
+import { createAdapter } from "@socket.io/redis-adapter";
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";
@@ -8,7 +9,7 @@ import { corsOrigins, env } from "./config/env.js";
 import { prisma } from "./db/prisma.js";
 import { errorHandler, notFoundHandler } from "./middleware/error.middleware.js";
 import { apiRouter } from "./routes/index.js";
-import { connectRedis, closeRedis } from "./services/redis.service.js";
+import { connectRedis, closeRedis, createSocketRedisClients } from "./services/redis.service.js";
 import { registerSocketHandlers } from "./sockets/index.js";
 import { setIoInstance } from "./sockets/io-instance.js";
 
@@ -20,6 +21,8 @@ const io = new Server(httpServer, {
     credentials: true
   }
 });
+const socketRedisClients = createSocketRedisClients();
+io.adapter(createAdapter(socketRedisClients.pubClient, socketRedisClients.subClient));
 setIoInstance(io);
 
 app.use(helmet());
@@ -51,6 +54,10 @@ async function shutdown(signal: string) {
   console.info(`${signal} received. Shutting down API.`);
   httpServer.close(async () => {
     await closeRedis();
+    await Promise.all([
+      socketRedisClients.pubClient.quit().catch(() => undefined),
+      socketRedisClients.subClient.quit().catch(() => undefined),
+    ]);
     await prisma.$disconnect();
     process.exit(0);
   });
@@ -62,6 +69,10 @@ process.on("SIGINT", () => void shutdown("SIGINT"));
 void start().catch(async (error) => {
   console.error(error);
   await closeRedis();
+  await Promise.all([
+    socketRedisClients.pubClient.quit().catch(() => undefined),
+    socketRedisClients.subClient.quit().catch(() => undefined),
+  ]);
   await prisma.$disconnect();
   process.exit(1);
 });

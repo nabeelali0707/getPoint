@@ -7,6 +7,26 @@ const realRedis = new Redis(env.REDIS_URL, {
   enableOfflineQueue: false,
 });
 
+export function createSocketRedisClients() {
+  const pubClient = new Redis(env.REDIS_URL, {
+    lazyConnect: false,
+    maxRetriesPerRequest: null,
+  });
+  const subClient = pubClient.duplicate();
+
+  const logAdapterError = (clientName: string) => (error: Error) => {
+    console.warn(
+      `Socket.io Redis adapter ${clientName} connection issue. Running in local-only broadcast mode until Redis reconnects.`,
+      error.message
+    );
+  };
+
+  pubClient.on("error", logAdapterError("publisher"));
+  subClient.on("error", logAdapterError("subscriber"));
+
+  return { pubClient, subClient };
+}
+
 // A local in-memory store for fallback when Redis is offline or not installed
 const memoryStore = new Map<string, { value: string; expiresAt: number }>();
 
