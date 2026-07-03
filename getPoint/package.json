@@ -1,20 +1,24 @@
 {
   "name": "point-management-system",
   "private": true,
-  "packageManager": "pnpm@9.15.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev:api": "pnpm --filter @point/api dev",
-    "build:shared": "pnpm --filter @point/shared-types build",
-    "build:api": "pnpm build:shared && pnpm --filter @point/api build",
-    "dev:web": "pnpm --filter @point/web dev",
-    "build:web": "pnpm --filter @point/web build",
-    "dev": "pnpm --filter @point/api --filter @point/web dev",
-    "db:generate": "pnpm --filter @point/api db:generate",
-    "db:migrate": "pnpm --filter @point/api db:migrate",
-    "db:seed": "pnpm --filter @point/api db:seed",
-    "db:seed:drivers": "pnpm --filter @point/api db:seed:drivers"
+    "dev:api": "npm run dev -w @point/api",
+    "build:shared": "npm run build -w @point/shared-types",
+    "build:api": "npm run build:shared && npm run build -w @point/api",
+    "dev:web": "npm run dev -w @point/web",
+    "build:web": "npm run build -w @point/web",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "db:generate": "npm run db:generate -w @point/api",
+    "db:migrate": "npm run db:migrate -w @point/api",
+    "db:seed": "npm run db:seed -w @point/api",
+    "db:seed:drivers": "npm run db:seed:drivers -w @point/api"
   },
   "devDependencies": {
+    "concurrently": "^9.1.0",
     "typescript": "^5.7.2"
   }
 }
