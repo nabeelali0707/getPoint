@@ -8,6 +8,7 @@ import { corsOrigins, env } from "./config/env.js";
 import { prisma } from "./db/prisma.js";
 import { errorHandler, notFoundHandler } from "./middleware/error.middleware.js";
 import { apiRouter } from "./routes/index.js";
+import { startSignalLostScanner, stopSignalLostScanner } from "./services/signal-lost.service.js";
 import { registerSocketHandlers } from "./sockets/index.js";
 import { setIoInstance } from "./sockets/io-instance.js";
 
@@ -39,6 +40,7 @@ registerSocketHandlers(io);
 
 async function start() {
   await prisma.$connect();
+  startSignalLostScanner();
 
   httpServer.listen(env.PORT, () => {
     console.info(`API listening on http://localhost:${env.PORT}`);
@@ -47,6 +49,7 @@ async function start() {
 
 async function shutdown(signal: string) {
   console.info(`${signal} received. Shutting down API.`);
+  stopSignalLostScanner();
   httpServer.close(async () => {
     await prisma.$disconnect();
     process.exit(0);
@@ -58,6 +61,7 @@ process.on("SIGINT", () => void shutdown("SIGINT"));
 
 void start().catch(async (error) => {
   console.error(error);
+  stopSignalLostScanner();
   await prisma.$disconnect();
   process.exit(1);
 });

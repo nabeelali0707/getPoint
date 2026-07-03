@@ -2,7 +2,7 @@ export type UserRole = "student" | "driver" | "admin";
 export type UserStatus = "active" | "suspended";
 export type DriverApprovalStatus = "pending" | "approved" | "rejected";
 export type PointStatus = "active" | "inactive" | "delayed" | "signal_lost";
-export type TripStatus = "started" | "paused" | "ended";
+export type TripStatus = "started" | "paused" | "ended" | "signal_lost";
 export type ReportStatus = "open" | "resolved";
 export type NotificationReadStatus = "unread" | "read";
 

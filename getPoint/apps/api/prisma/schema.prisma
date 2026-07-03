@@ -36,6 +36,7 @@ enum TripStatus {
   started
   paused
   ended
+  signal_lost
 }
 
 enum ReportStatus {
