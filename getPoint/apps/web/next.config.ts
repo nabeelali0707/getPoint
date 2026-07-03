@@ -4,6 +4,7 @@ const apiUrl = process.env.API_URL ?? "http://localhost:4000";
 const isCapacitorExport = process.env.NEXT_OUTPUT_EXPORT === "true";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: false,
   eslint: {
     ignoreDuringBuilds: true,
   },
