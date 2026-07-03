@@ -65,7 +65,7 @@ export default function RoutesPage() {
     const endMin = timeToMinutes(route.endTime);
 
     if (nowMin >= startMin && nowMin <= endMin) {
-      return "scheduled";
+      return "live";
     }
     return "offline";
   };
@@ -164,12 +164,6 @@ export default function RoutesPage() {
                       <div className="bg-success/20 text-success px-2 py-1 rounded-lg flex items-center gap-1">
                         <span className="w-2 h-2 rounded-full bg-success pulse-dot"></span>
                         <span className="text-[9px] font-bold uppercase">LIVE</span>
-                      </div>
-                    )}
-                    {status === "scheduled" && (
-                      <div className="bg-warning/20 text-warning px-2 py-1 rounded-lg flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-warning pulse-dot"></span>
-                        <span className="text-[9px] font-bold uppercase">FALLBACK</span>
                       </div>
                     )}
                     {status === "offline" && (

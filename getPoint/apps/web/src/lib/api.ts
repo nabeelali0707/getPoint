@@ -27,11 +27,14 @@ export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> 
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "";
   const url = path.startsWith("http") ? path : `${apiBaseUrl}${path}`;
   let res: Response;
+
+  const isFormData = typeof window !== "undefined" && init?.body instanceof FormData;
+
   try {
     res = await fetch(url, {
       ...init,
       headers: {
-        "Content-Type": "application/json",
+        ...(isFormData ? {} : { "Content-Type": "application/json" }),
         ...init?.headers,
       },
     });

@@ -247,16 +247,10 @@ export default function RouteDetailPage() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            {busStatus === "live" && (
+            {(busStatus === "live" || busStatus === "fallback") && (
               <div className="flex items-center gap-1.5 bg-success/20 text-success px-2 py-0.5 rounded-full border border-success/30">
                 <span className="w-2 h-2 rounded-full bg-success pulse-dot"></span>
-                <span className="text-[9px] font-bold uppercase">LIVE GPS</span>
-              </div>
-            )}
-            {busStatus === "fallback" && (
-              <div className="flex items-center gap-1.5 bg-warning/20 text-warning px-2 py-0.5 rounded-full border border-warning/30">
-                <span className="w-2 h-2 rounded-full bg-warning pulse-dot"></span>
-                <span className="text-[9px] font-bold uppercase">TIMETABLE</span>
+                <span className="text-[9px] font-bold uppercase">LIVE</span>
               </div>
             )}
             {busStatus === "offline" && (
@@ -278,11 +272,9 @@ export default function RouteDetailPage() {
                 Current Status
               </span>
               <h3 className="text-lg font-bold text-on-surface">
-                {busStatus === "live"
-                  ? "Broadcasting Live GPS"
-                  : busStatus === "fallback"
-                  ? "Estimated (Timetable Fallback)"
-                  : "Route Inactive"}
+                {busStatus === "offline"
+                  ? "Route Inactive"
+                  : "Broadcasting Live GPS"}
               </h3>
               <p className="text-xs text-on-surface-variant">
                 Driver: <span className="text-on-surface font-semibold">{route.driverName || "Unassigned"}</span>
