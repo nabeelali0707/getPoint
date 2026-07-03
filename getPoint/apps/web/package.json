@@ -12,6 +12,7 @@
     "@capacitor-community/background-geolocation": "^1.2.26",
     "@capacitor/core": "^8.4.1",
     "@point/shared-types": "*",
+    "@supabase/supabase-js": "^2.110.0",
     "leaflet": "^1.9.4",
     "next": "15.1.0",
     "react": "19.0.0",

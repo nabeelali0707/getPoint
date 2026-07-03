@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import BottomNav from "@/components/BottomNav";
 import { authFetch } from "@/lib/api";
 import { useRequireAuth } from "@/lib/auth";
-import { socket } from "@/lib/socket";
+import { realtime } from "@/lib/realtime";
 
 const RouteMap = dynamic(() => import("@/components/RouteMap"), { ssr: false });
 
@@ -70,10 +70,8 @@ export default function RouteDetailPage() {
 
   // Sockets Subscription (for Live mode)
   useEffect(() => {
-    if (!route || !route.isLive || !route.tripId) return;
-
-    socket.connect();
-    socket.emit("join:trip", route.tripId);
+    const client = realtime;
+    if (!route || !route.isLive || !route.tripId || !client) return;
 
     const handleTripUpdate = (updatedTrip: any) => {
       if (updatedTrip.lat && updatedTrip.lng) {
@@ -84,7 +82,10 @@ export default function RouteDetailPage() {
       }
     };
 
-    socket.on("trip:update", handleTripUpdate);
+    const channel = client
+      .channel(`trip:${route.tripId}`)
+      .on("broadcast", { event: "trip:update" }, ({ payload }) => handleTripUpdate(payload))
+      .subscribe();
 
     // Seed initial live coords
     if (route.liveLat && route.liveLng) {
@@ -95,11 +96,7 @@ export default function RouteDetailPage() {
     }
 
     return () => {
-      if (route.tripId) {
-        socket.emit("leave:trip", route.tripId);
-      }
-      socket.off("trip:update", handleTripUpdate);
-      socket.disconnect();
+      void client.removeChannel(channel);
     };
   }, [route?.isLive, route?.tripId]);
 

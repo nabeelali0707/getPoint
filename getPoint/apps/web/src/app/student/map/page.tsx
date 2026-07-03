@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import BottomNav from "@/components/BottomNav";
 import { authFetch } from "@/lib/api";
 import { useRequireAuth } from "@/lib/auth";
-import { socket } from "@/lib/socket";
+import { realtime } from "@/lib/realtime";
 
 const LiveMap = dynamic(() => import("@/components/LiveMap"), { ssr: false });
 
@@ -39,11 +39,6 @@ export default function LiveMapPage() {
     authFetch<{ points: MapPoint[] }>("/api/points")
       .then((data) => {
         setPoints(data.points);
-        
-        socket.connect();
-        data.points.forEach((p) => {
-          socket.emit("join:point", p.id);
-        });
       })
       .catch(console.error)
       .finally(() => setIsLoading(false));
@@ -68,13 +63,21 @@ export default function LiveMapPage() {
       );
     };
 
-    socket.on("point:location", handleLocationUpdate);
-    socket.on("point:status", handleStatusUpdate);
+    const client = realtime;
+    if (!client) return;
+
+    const channel = client
+      .channel("points:all")
+      .on("broadcast", { event: "point:location" }, ({ payload }) =>
+        handleLocationUpdate(payload as { pointId: string; lat: number; lng: number; speed: number | null; status: keyof typeof statusConfig }),
+      )
+      .on("broadcast", { event: "point:status" }, ({ payload }) =>
+        handleStatusUpdate(payload as { pointId: string; status: keyof typeof statusConfig }),
+      )
+      .subscribe();
 
     return () => {
-      socket.off("point:location", handleLocationUpdate);
-      socket.off("point:status", handleStatusUpdate);
-      socket.disconnect();
+      void client.removeChannel(channel);
     };
   }, []);
 

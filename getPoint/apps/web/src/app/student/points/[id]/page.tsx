@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import BottomNav from "@/components/BottomNav";
 import { authFetch } from "@/lib/api";
 import { useRequireAuth } from "@/lib/auth";
-import { socket } from "@/lib/socket";
+import { realtime } from "@/lib/realtime";
 
 const PointMap = dynamic(() => import("@/components/PointMap"), { ssr: false });
 
@@ -48,8 +48,8 @@ export default function PointDetailPage() {
   }, [pointId]);
 
   useEffect(() => {
-    socket.connect();
-    socket.emit("join:point", pointId);
+    const client = realtime;
+    if (!client) return;
 
     const handleLocationUpdate = (data: { pointId: string; lat: number; lng: number; speed: number | null; status: string }) => {
       setPoint((prev) => {
@@ -84,14 +84,18 @@ export default function PointDetailPage() {
       });
     };
 
-    socket.on("point:location", handleLocationUpdate);
-    socket.on("point:status", handleStatusUpdate);
+    const channel = client
+      .channel(`point:${pointId}`)
+      .on("broadcast", { event: "point:location" }, ({ payload }) =>
+        handleLocationUpdate(payload as { pointId: string; lat: number; lng: number; speed: number | null; status: string }),
+      )
+      .on("broadcast", { event: "point:status" }, ({ payload }) =>
+        handleStatusUpdate(payload as { pointId: string; status: string }),
+      )
+      .subscribe();
 
     return () => {
-      socket.emit("leave:point", pointId);
-      socket.off("point:location", handleLocationUpdate);
-      socket.off("point:status", handleStatusUpdate);
-      socket.disconnect();
+      void client.removeChannel(channel);
     };
   }, [pointId]);
 

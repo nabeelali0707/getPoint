@@ -3,24 +3,15 @@ import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-import { Server } from "socket.io";
 import { corsOrigins, env } from "./config/env.js";
 import { prisma } from "./db/prisma.js";
 import { errorHandler, notFoundHandler } from "./middleware/error.middleware.js";
 import { apiRouter } from "./routes/index.js";
+import { closeRealtimeChannels } from "./services/realtime.service.js";
 import { startSignalLostScanner, stopSignalLostScanner } from "./services/signal-lost.service.js";
-import { registerSocketHandlers } from "./sockets/index.js";
-import { setIoInstance } from "./sockets/io-instance.js";
 
 const app = express();
 const httpServer = http.createServer(app);
-const io = new Server(httpServer, {
-  cors: {
-    origin: corsOrigins,
-    credentials: true
-  }
-});
-setIoInstance(io);
 
 app.use(helmet());
 app.use(
@@ -36,8 +27,6 @@ app.use("/api", apiRouter);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-registerSocketHandlers(io);
-
 async function start() {
   await prisma.$connect();
   startSignalLostScanner();
@@ -51,6 +40,7 @@ async function shutdown(signal: string) {
   console.info(`${signal} received. Shutting down API.`);
   stopSignalLostScanner();
   httpServer.close(async () => {
+    await closeRealtimeChannels();
     await prisma.$disconnect();
     process.exit(0);
   });
@@ -62,6 +52,7 @@ process.on("SIGINT", () => void shutdown("SIGINT"));
 void start().catch(async (error) => {
   console.error(error);
   stopSignalLostScanner();
+  await closeRealtimeChannels();
   await prisma.$disconnect();
   process.exit(1);
 });

@@ -1,5 +1,5 @@
 import { prisma } from "../db/prisma.js";
-import { getIoInstance } from "../sockets/io-instance.js";
+import { broadcastPointStatus, broadcastTripUpdate } from "./realtime.service.js";
 
 const DEFAULT_SIGNAL_LOST_AFTER_MS = 60_000;
 const DEFAULT_SCAN_INTERVAL_MS = 30_000;
@@ -22,7 +22,6 @@ export async function markSignalLostTrips(signalLostAfterMs = DEFAULT_SIGNAL_LOS
     },
   });
 
-  const io = getIoInstance();
   let transitioned = 0;
 
   for (const location of staleLocations) {
@@ -49,11 +48,11 @@ export async function markSignalLostTrips(signalLostAfterMs = DEFAULT_SIGNAL_LOS
     }
 
     transitioned += 1;
-    io.to(`point:${location.trip.pointId}`).emit("point:status", {
+    await broadcastPointStatus({
       pointId: location.trip.pointId,
       status: result.point.status,
     });
-    io.to(`trip:${location.tripId}`).emit("trip:update", {
+    await broadcastTripUpdate(location.tripId, {
       id: location.tripId,
       status: "signal_lost",
       isLive: false,
