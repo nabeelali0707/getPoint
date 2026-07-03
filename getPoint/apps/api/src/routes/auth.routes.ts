@@ -26,6 +26,12 @@ authRouter.post("/students/signup", authAbuseLimiter, asyncHandler(authControlle
 authRouter.post("/students/verify-otp", authAbuseLimiter, asyncHandler(authController.verifyStudentEmail));
 authRouter.post("/students/resend-otp", authAbuseLimiter, asyncHandler(authController.resendStudentOtp));
 authRouter.post("/drivers/register", authAbuseLimiter, asyncHandler(authController.registerDriver));
+authRouter.get("/login", (_req, res) => {
+  res.status(405).json({
+    message: "Use POST /api/auth/login for API login, or open /auth/login in the web app.",
+    webLoginPath: "/auth/login",
+  });
+});
 authRouter.post("/login", loginLimiter, asyncHandler(authController.login));
 authRouter.post("/refresh", asyncHandler(authController.refresh));
 authRouter.post("/logout", asyncHandler(authController.logout));
