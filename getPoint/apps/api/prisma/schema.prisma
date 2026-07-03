@@ -1,0 +1,189 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  student
+  driver
+  admin
+}
+
+enum UserStatus {
+  active
+  suspended
+}
+
+enum DriverApprovalStatus {
+  pending
+  approved
+  rejected
+}
+
+enum PointStatus {
+  active
+  inactive
+  delayed
+  signal_lost
+}
+
+enum TripStatus {
+  started
+  paused
+  ended
+}
+
+enum ReportStatus {
+  open
+  resolved
+}
+
+enum NotificationReadStatus {
+  unread
+  read
+}
+
+model User {
+  id            String         @id @default(uuid())
+  role          UserRole
+  email         String         @unique
+  passwordHash  String         @map("password_hash")
+  status        UserStatus     @default(active)
+  emailVerified Boolean        @default(false) @map("email_verified")
+  createdAt     DateTime       @default(now()) @map("created_at")
+
+  studentProfile StudentProfile?
+  driverProfile  DriverProfile?
+  refreshTokens  RefreshToken[]
+  reports        Report[]       @relation("StudentReports")
+  notifications  Notification[]
+
+  @@map("users")
+}
+
+model StudentProfile {
+  userId String @id @map("user_id")
+  nuId   String @unique @map("nu_id")
+
+  user           User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  favoritePoints Point[] @relation("FavoritePoints")
+
+  @@map("student_profiles")
+}
+
+model DriverProfile {
+  userId           String                @id @map("user_id")
+  fullName         String                @map("full_name")
+  licenseNo        String                @unique @map("license_no")
+  vehicleNo        String                @map("vehicle_no")
+  phone            String
+  approvalStatus   DriverApprovalStatus  @default(pending) @map("approval_status")
+  rejectionReason  String?               @map("rejection_reason")
+  assignedPointId  String?               @map("assigned_point_id")
+
+  user          User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignedPoint Point? @relation(fields: [assignedPointId], references: [id])
+  trips         Trip[]
+
+  @@map("driver_profiles")
+}
+
+model Point {
+  id               String      @id @default(uuid())
+  code             String      @unique
+  name             String
+  description      String?
+  referenceStopLat Float       @map("reference_stop_lat")
+  referenceStopLng Float       @map("reference_stop_lng")
+  routePolyline    String?     @map("route_polyline")
+  status           PointStatus @default(inactive)
+  createdAt        DateTime    @default(now()) @map("created_at")
+  updatedAt        DateTime    @updatedAt @map("updated_at")
+
+  favoritedBy     StudentProfile[] @relation("FavoritePoints")
+  assignedDrivers DriverProfile[]
+  trips           Trip[]
+  reports         Report[]
+
+  @@map("points")
+}
+
+model Trip {
+  id        String     @id @default(uuid())
+  pointId   String     @map("point_id")
+  driverId  String     @map("driver_id")
+  startTime DateTime   @default(now()) @map("start_time")
+  endTime   DateTime?  @map("end_time")
+  status    TripStatus @default(started)
+
+  point         Point          @relation(fields: [pointId], references: [id])
+  driver        DriverProfile  @relation(fields: [driverId], references: [userId])
+  locationPings LocationPing[]
+
+  @@index([pointId, status])
+  @@index([driverId, status])
+  @@map("trips")
+}
+
+model LocationPing {
+  id        String   @id @default(uuid())
+  tripId    String   @map("trip_id")
+  lat       Float
+  lng       Float
+  timestamp DateTime @default(now())
+  speed     Float?
+
+  trip Trip @relation(fields: [tripId], references: [id], onDelete: Cascade)
+
+  @@index([tripId, timestamp])
+  @@map("location_pings")
+}
+
+model Report {
+  id        String       @id @default(uuid())
+  studentId String       @map("student_id")
+  pointId   String       @map("point_id")
+  message   String
+  status    ReportStatus @default(open)
+  createdAt DateTime     @default(now()) @map("created_at")
+  resolvedAt DateTime?   @map("resolved_at")
+
+  student User  @relation("StudentReports", fields: [studentId], references: [id])
+  point   Point @relation(fields: [pointId], references: [id])
+
+  @@index([status, createdAt])
+  @@map("reports")
+}
+
+model Notification {
+  id         String                 @id @default(uuid())
+  userId     String                 @map("user_id")
+  type       String
+  message    String
+  readStatus NotificationReadStatus @default(unread) @map("read_status")
+  createdAt  DateTime               @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readStatus])
+  @@map("notifications")
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  tokenHash String   @unique @map("token_hash")
+  expiresAt DateTime @map("expires_at")
+  revokedAt DateTime? @map("revoked_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, expiresAt])
+  @@map("refresh_tokens")
+}
