@@ -2,9 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import BottomNav from "@/components/BottomNav";
 import { authFetch } from "@/lib/api";
 import { useRequireAuth } from "@/lib/auth";
+import { socket } from "@/lib/socket";
+
+const LiveMap = dynamic(() => import("@/components/LiveMap"), { ssr: false });
 
 const statusConfig = {
   active: { color: "bg-success", text: "text-success", label: "Active", pulse: true },
@@ -33,9 +37,45 @@ export default function LiveMapPage() {
 
   useEffect(() => {
     authFetch<{ points: MapPoint[] }>("/api/points")
-      .then((data) => setPoints(data.points))
+      .then((data) => {
+        setPoints(data.points);
+        
+        socket.connect();
+        data.points.forEach((p) => {
+          socket.emit("join:point", p.id);
+        });
+      })
       .catch(console.error)
       .finally(() => setIsLoading(false));
+
+    const handleLocationUpdate = (data: { pointId: string; lat: number; lng: number; speed: number | null; status: keyof typeof statusConfig }) => {
+      setPoints((prevPoints) =>
+        prevPoints.map((p) =>
+          p.id === data.pointId
+            ? { ...p, lat: data.lat, lng: data.lng, status: data.status }
+            : p
+        )
+      );
+    };
+
+    const handleStatusUpdate = (data: { pointId: string; status: keyof typeof statusConfig }) => {
+      setPoints((prevPoints) =>
+        prevPoints.map((p) =>
+          p.id === data.pointId
+            ? { ...p, status: data.status }
+            : p
+        )
+      );
+    };
+
+    socket.on("point:location", handleLocationUpdate);
+    socket.on("point:status", handleStatusUpdate);
+
+    return () => {
+      socket.off("point:location", handleLocationUpdate);
+      socket.off("point:status", handleStatusUpdate);
+      socket.disconnect();
+    };
   }, []);
 
   const filters = ["all", "active", "inactive", "delayed", "signal_lost"];
@@ -50,32 +90,13 @@ export default function LiveMapPage() {
 
   return (
     <div className="min-h-screen bg-background text-on-surface flex flex-col relative">
-      <div className="fixed inset-0 bg-gradient-to-br from-[#060e20] to-[#131b2e] z-0">
-        <div className="w-full h-full flex items-center justify-center relative">
-          <span className="material-symbols-outlined text-primary/10 text-[200px]">map</span>
-          {!isLoading &&
-            filteredPoints.map((point, i) => {
-              const cfg = statusConfig[point.status];
-              return (
-                <div
-                  key={point.id}
-                  className="absolute cursor-pointer group"
-                  style={{
-                    top: `${25 + i * 12}%`,
-                    left: `${20 + i * 15}%`,
-                  }}
-                  onClick={() => router.push(`/student/points/${point.id}`)}
-                >
-                  <div className="relative flex flex-col items-center">
-                    <div className={`w-4 h-4 rounded-full ${cfg.color} ${cfg.pulse ? "pulse-dot" : ""} shadow-lg`}></div>
-                    <div className="glass-card px-2 py-1 rounded-lg mt-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                      <span className="text-[10px] font-bold">{point.code}</span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-        </div>
+      <div className="fixed inset-0 z-0">
+        {!isLoading && (
+          <LiveMap
+            points={filteredPoints}
+            onMarkerClick={(id) => router.push(`/student/points/${id}`)}
+          />
+        )}
       </div>
 
       <div className="fixed top-0 left-0 right-0 z-40 p-4 space-y-3">

@@ -1,5 +1,6 @@
 import { prisma } from "../db/prisma.js";
 import { HttpError } from "../utils/http-error.js";
+import { getIoInstance } from "../sockets/io-instance.js";
 
 function serializeTrip(
   trip: {
@@ -134,6 +135,14 @@ export async function startTrip(userId: string, pointId?: string) {
 
   await syncPointStatus(resolvedPointId);
 
+  const pointAfterSync = await prisma.point.findUnique({ where: { id: resolvedPointId } });
+  if (pointAfterSync) {
+    getIoInstance().to(`point:${resolvedPointId}`).emit("point:status", {
+      pointId: resolvedPointId,
+      status: pointAfterSync.status,
+    });
+  }
+
   await prisma.notification.create({
     data: {
       userId,
@@ -173,6 +182,14 @@ export async function endTrip(userId: string, tripId: string) {
 
   await syncPointStatus(trip.pointId);
 
+  const pointAfterSync = await prisma.point.findUnique({ where: { id: trip.pointId } });
+  if (pointAfterSync) {
+    getIoInstance().to(`point:${trip.pointId}`).emit("point:status", {
+      pointId: trip.pointId,
+      status: pointAfterSync.status,
+    });
+  }
+
   return { trip: serializeTrip(updated) };
 }
 
@@ -204,5 +221,18 @@ export async function recordPing(
     },
   });
 
-  return { trip: serializeTrip(refreshed!) };
+  const serialized = serializeTrip(refreshed!);
+  const io = getIoInstance();
+
+  io.to(`point:${refreshed!.pointId}`).emit("point:location", {
+    pointId: refreshed!.pointId,
+    lat: input.lat,
+    lng: input.lng,
+    speed: input.speed ?? null,
+    status: refreshed!.point.status,
+  });
+
+  io.to(`trip:${tripId}`).emit("trip:update", serialized);
+
+  return { trip: serialized };
 }

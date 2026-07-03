@@ -10,6 +10,7 @@ import { errorHandler, notFoundHandler } from "./middleware/error.middleware.js"
 import { apiRouter } from "./routes/index.js";
 import { connectRedis, closeRedis } from "./services/redis.service.js";
 import { registerSocketHandlers } from "./sockets/index.js";
+import { setIoInstance } from "./sockets/io-instance.js";
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -19,6 +20,7 @@ const io = new Server(httpServer, {
     credentials: true
   }
 });
+setIoInstance(io);
 
 app.use(helmet());
 app.use(

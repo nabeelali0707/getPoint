@@ -2,8 +2,12 @@
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Capacitor, registerPlugin } from "@capacitor/core";
+import type { BackgroundGeolocationPlugin } from "@capacitor-community/background-geolocation";
 import { authFetch } from "@/lib/api";
 import { useRequireRole } from "@/lib/auth";
+
+const BackgroundGeolocation = registerPlugin<BackgroundGeolocationPlugin>("BackgroundGeolocation");
 
 interface TripData {
   id: string;
@@ -17,6 +21,7 @@ interface TripData {
   lat: number | null;
   lng: number | null;
   startTime: string;
+  pointId: string;
 }
 
 interface CurrentTripResponse {
@@ -31,8 +36,12 @@ export default function ActiveTripPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
+  const [isSosSubmitting, setIsSosSubmitting] = useState(false);
   const [passengers, setPassengers] = useState(24);
-  const pingIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const browserWatchIdRef = useRef<number | null>(null);
+  const nativeWatchIdRef = useRef<string | null>(null);
+  const lastPingTimeRef = useRef<number>(0);
 
   useRequireRole("driver");
 
@@ -54,19 +63,11 @@ export default function ActiveTripPage() {
     loadTrip();
   }, [loadTrip]);
 
-  const sendPing = useCallback(async (activeTrip: TripData) => {
-    const baseLat = activeTrip.lat ?? 24.86;
-    const baseLng = activeTrip.lng ?? 67.08;
-    const speed = Math.floor(Math.random() * 20 + 25);
-
+  const sendPing = useCallback(async (activeTripId: string, lat: number, lng: number, speed: number | null) => {
     try {
-      const result = await authFetch<{ trip: TripData }>(`/api/trips/${activeTrip.id}/ping`, {
+      const result = await authFetch<{ trip: TripData }>(`/api/trips/${activeTripId}/ping`, {
         method: "POST",
-        body: JSON.stringify({
-          lat: baseLat + (Math.random() - 0.5) * 0.002,
-          lng: baseLng + (Math.random() - 0.5) * 0.002,
-          speed,
-        }),
+        body: JSON.stringify({ lat, lng, speed }),
       });
       setTrip(result.trip);
     } catch {
@@ -74,35 +75,142 @@ export default function ActiveTripPage() {
     }
   }, []);
 
-  useEffect(() => {
-    if (pingIntervalRef.current) {
-      clearInterval(pingIntervalRef.current);
-      pingIntervalRef.current = null;
+  const stopLocationWatcher = useCallback(async () => {
+    if (browserWatchIdRef.current !== null) {
+      navigator.geolocation.clearWatch(browserWatchIdRef.current);
+      browserWatchIdRef.current = null;
     }
+
+    if (nativeWatchIdRef.current !== null) {
+      const id = nativeWatchIdRef.current;
+      nativeWatchIdRef.current = null;
+      await BackgroundGeolocation.removeWatcher({ id });
+    }
+  }, []);
+
+  useEffect(() => {
+    void stopLocationWatcher();
 
     if (!trip?.isLive) return;
 
-    pingIntervalRef.current = setInterval(() => {
-      void sendPing(trip);
-      setPassengers((prev) => Math.max(0, prev + Math.floor(Math.random() * 3 - 1)));
-    }, 3000);
+    let isCancelled = false;
+
+    if (Capacitor.isNativePlatform()) {
+      void BackgroundGeolocation.addWatcher(
+        {
+          backgroundTitle: "getPoint - Sharing your live location",
+          backgroundMessage: "Your trip stays visible while getPoint Driver is minimized.",
+          requestPermissions: true,
+          stale: false,
+          distanceFilter: 10,
+        },
+        (location, error) => {
+          if (error) {
+            console.error("BackgroundGeolocation error:", error);
+            setErrorMsg(
+              error.code === "NOT_AUTHORIZED"
+                ? "Always-on location access is required to broadcast this trip in the background."
+                : "Location access is required to broadcast this trip.",
+            );
+            return;
+          }
+
+          if (!location) return;
+
+          const speedVal =
+            typeof location.speed === "number" && location.speed >= 0 ? location.speed * 3.6 : null;
+          void sendPing(trip.id, location.latitude, location.longitude, speedVal);
+        },
+      )
+        .then((id) => {
+          if (isCancelled) {
+            void BackgroundGeolocation.removeWatcher({ id });
+            return;
+          }
+
+          nativeWatchIdRef.current = id;
+        })
+        .catch((error: unknown) => {
+          console.error("BackgroundGeolocation addWatcher error:", error);
+          setErrorMsg("Location access is required to broadcast this trip.");
+        });
+
+      return () => {
+        isCancelled = true;
+        void stopLocationWatcher();
+      };
+    }
+
+    if (!navigator.geolocation) {
+      setErrorMsg("Geolocation is not supported by this browser.");
+      return;
+    }
+
+    browserWatchIdRef.current = navigator.geolocation.watchPosition(
+      (position) => {
+        const now = Date.now();
+        if (now - lastPingTimeRef.current >= 3000) {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+
+          let speedVal: number | null = null;
+          if (typeof position.coords.speed === "number" && position.coords.speed >= 0) {
+            speedVal = position.coords.speed * 3.6;
+          }
+
+          lastPingTimeRef.current = now;
+          void sendPing(trip.id, lat, lng, speedVal);
+        }
+      },
+      (error) => {
+        console.error("watchPosition error:", error);
+        setErrorMsg("Location access is required to broadcast this trip.");
+      },
+      {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 10000,
+      }
+    );
 
     return () => {
-      if (pingIntervalRef.current) clearInterval(pingIntervalRef.current);
+      void stopLocationWatcher();
     };
-  }, [trip?.id, trip?.isLive, sendPing]);
+  }, [trip?.id, trip?.isLive, sendPing, stopLocationWatcher]);
 
   const handleToggleTrip = async () => {
     setIsSubmitting(true);
     setErrorMsg("");
+    setSuccessMsg("");
 
     try {
       if (trip?.isLive) {
+        await stopLocationWatcher();
         const result = await authFetch<{ trip: TripData }>(`/api/trips/${trip.id}/end`, {
           method: "POST",
         });
         setTrip(result.trip);
       } else {
+        if (!Capacitor.isNativePlatform() && !navigator.geolocation) {
+          throw new Error("Geolocation is not supported by this browser.");
+        }
+
+        const hasPermission = Capacitor.isNativePlatform()
+          ? true
+          : await new Promise<boolean>((resolve) => {
+              navigator.geolocation.getCurrentPosition(
+                () => resolve(true),
+                () => resolve(false),
+                { enableHighAccuracy: true }
+              );
+            });
+
+        if (!hasPermission) {
+          setErrorMsg("Location access is required to broadcast this trip.");
+          setIsSubmitting(false);
+          return;
+        }
+
         const result = await authFetch<{ trip: TripData }>("/api/trips/start", {
           method: "POST",
           body: JSON.stringify(
@@ -116,6 +224,34 @@ export default function ActiveTripPage() {
       setErrorMsg(message);
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleSOS = async () => {
+    if (!trip || !trip.isLive) {
+      setErrorMsg("SOS can only be triggered during an active live trip.");
+      return;
+    }
+
+    setIsSosSubmitting(true);
+    setErrorMsg("");
+    setSuccessMsg("");
+
+    try {
+      await authFetch("/api/reports", {
+        method: "POST",
+        body: JSON.stringify({
+          pointId: trip.pointId,
+          message: `SOS triggered by driver on trip ${trip.id}`,
+        }),
+      });
+      setSuccessMsg("SOS report sent to admin successfully!");
+      setTimeout(() => setSuccessMsg(""), 5000);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Failed to trigger SOS.";
+      setErrorMsg(message);
+    } finally {
+      setIsSosSubmitting(false);
     }
   };
 
@@ -152,6 +288,15 @@ export default function ActiveTripPage() {
         </div>
       )}
 
+      {successMsg && (
+        <div className="fixed top-20 left-4 right-4 z-[60] max-w-lg mx-auto">
+          <div className="bg-success/20 text-success p-3 rounded-xl border border-success/30 text-sm font-semibold flex items-center gap-2">
+            <span className="material-symbols-outlined text-sm">check_circle</span>
+            {successMsg}
+          </div>
+        </div>
+      )}
+
       <header className="fixed top-0 left-0 right-0 z-50 p-4">
         <div className="glass-card rounded-xl p-3 flex items-center justify-between max-w-lg mx-auto">
           <div className="flex items-center gap-3">
@@ -181,12 +326,25 @@ export default function ActiveTripPage() {
             <p className="text-2xl font-bold text-primary">{Math.round(speed)}</p>
             <p className="text-[10px] text-on-surface-variant">km/h</p>
           </div>
-          <div className="glass-card rounded-xl p-3 text-center">
+          <div className="glass-card rounded-xl p-3 text-center flex flex-col justify-between">
             <div className="flex items-center justify-center gap-1">
               <span className="material-symbols-outlined text-secondary text-sm">group</span>
             </div>
             <p className="text-2xl font-bold text-secondary">{passengers}</p>
-            <p className="text-[10px] text-on-surface-variant">Passengers</p>
+            <div className="flex justify-center gap-2 mt-1">
+              <button 
+                onClick={() => setPassengers(p => Math.max(0, p - 1))}
+                className="w-5 h-5 bg-white/10 rounded flex items-center justify-center text-xs hover:bg-white/20 select-none cursor-pointer"
+              >
+                -
+              </button>
+              <button 
+                onClick={() => setPassengers(p => p + 1)}
+                className="w-5 h-5 bg-white/10 rounded flex items-center justify-center text-xs hover:bg-white/20 select-none cursor-pointer"
+              >
+                +
+              </button>
+            </div>
           </div>
           <div className="glass-card rounded-xl p-3 text-center">
             <div className="flex items-center justify-center gap-1">
@@ -231,9 +389,15 @@ export default function ActiveTripPage() {
             </span>
             {isSubmitting ? "Updating..." : isLive ? "End Trip" : "Start Trip"}
           </button>
-          <button className="glass-card py-3 px-4 rounded-xl text-sm font-semibold text-on-surface-variant flex items-center justify-center gap-2 hover:bg-white/5 transition-all cursor-pointer border border-glass-border">
-            <span className="material-symbols-outlined text-sm">report_problem</span>
-            SOS
+          <button
+            onClick={handleSOS}
+            disabled={isSosSubmitting || !isLive}
+            className="glass-card py-3 px-4 rounded-xl text-sm font-semibold text-on-surface-variant flex items-center justify-center gap-2 hover:bg-white/5 transition-all cursor-pointer border border-glass-border disabled:opacity-50"
+          >
+            <span className="material-symbols-outlined text-sm">
+              {isSosSubmitting ? "hourglass_empty" : "report_problem"}
+            </span>
+            {isSosSubmitting ? "Sending..." : "SOS"}
           </button>
         </div>
       </div>

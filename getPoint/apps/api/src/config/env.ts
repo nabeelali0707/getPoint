@@ -21,7 +21,8 @@ const envSchema = z.object({
   SMTP_PASS: z.string().optional(),
   SMTP_FROM: z.string().email().default("no-reply@nu.edu.pk"),
   ADMIN_EMAIL: z.string().email().optional(),
-  ADMIN_PASSWORD: z.string().min(8).optional()
+  ADMIN_PASSWORD: z.string().min(8).optional(),
+  DRIVER_DEFAULT_PASSWORD: z.string().min(12).optional()
 });
 
 export const env = envSchema.parse(process.env);

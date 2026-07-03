@@ -10,7 +10,8 @@
     "start": "node dist/server.js",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "db:seed": "tsx src/db/seeds/admin.seed.ts && tsx src/db/seeds/points.seed.ts"
+    "db:seed": "tsx src/db/seeds/admin.seed.ts && tsx src/db/seeds/points.seed.ts",
+    "db:seed:drivers": "tsx src/db/seeds/drivers.seed.ts"
   },
   "dependencies": {
     "@point/shared-types": "workspace:*",
@@ -25,6 +26,7 @@
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.16",
     "socket.io": "^4.8.1",
+    "express-rate-limit": "^7.1.5",
     "zod": "^3.24.1"
   },
   "devDependencies": {

@@ -11,7 +11,8 @@
     "dev": "pnpm --filter @point/api --filter @point/web dev",
     "db:generate": "pnpm --filter @point/api db:generate",
     "db:migrate": "pnpm --filter @point/api db:migrate",
-    "db:seed": "pnpm --filter @point/api db:seed"
+    "db:seed": "pnpm --filter @point/api db:seed",
+    "db:seed:drivers": "pnpm --filter @point/api db:seed:drivers"
   },
   "devDependencies": {
     "typescript": "^5.7.2"

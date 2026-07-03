@@ -128,3 +128,24 @@
   line-height: 1rem;
   padding: 0 0.4rem;
 }
+
+/* Dark Mode Leaflet Map tiles filter */
+.dark-map .leaflet-tile {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+.dark-map .leaflet-container {
+  background: #0f172a !important;
+}
+.dark-map .leaflet-bar a {
+  background: rgba(15, 23, 42, 0.8) !important;
+  color: #dae2fd !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px);
+}
+.dark-map .leaflet-bar a:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.dark-map .leaflet-control-zoom {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+

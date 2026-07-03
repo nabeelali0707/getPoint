@@ -2,9 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import BottomNav from "@/components/BottomNav";
 import { authFetch } from "@/lib/api";
 import { useRequireAuth } from "@/lib/auth";
+import { socket } from "@/lib/socket";
+
+const PointMap = dynamic(() => import("@/components/PointMap"), { ssr: false });
 
 interface PointDetail {
   id: string;
@@ -14,6 +18,8 @@ interface PointDetail {
   eta: string;
   route: string;
   isFavorite: boolean;
+  lat: number;
+  lng: number;
 }
 
 export default function PointDetailPage() {
@@ -39,6 +45,54 @@ export default function PointDetailPage() {
       })
       .catch((err) => setErrorMsg(err.message || "Failed to load point."))
       .finally(() => setIsLoading(false));
+  }, [pointId]);
+
+  useEffect(() => {
+    socket.connect();
+    socket.emit("join:point", pointId);
+
+    const handleLocationUpdate = (data: { pointId: string; lat: number; lng: number; speed: number | null; status: string }) => {
+      setPoint((prev) => {
+        if (!prev || prev.id !== data.pointId) return prev;
+        const hasActiveTrip = data.status === "active" || data.status === "delayed";
+        const eta = hasActiveTrip ? "En route" : (data.status === "delayed" ? "12 mins" : "No active routes");
+        return {
+          ...prev,
+          lat: data.lat,
+          lng: data.lng,
+          status: data.status as PointDetail["status"],
+          eta,
+        };
+      });
+    };
+
+    const handleStatusUpdate = (data: { pointId: string; status: string }) => {
+      setPoint((prev) => {
+        if (!prev || prev.id !== data.pointId) return prev;
+        const hasActiveTrip = data.status === "active" || data.status === "delayed";
+        let eta = "No active routes";
+        if (hasActiveTrip) {
+          eta = "En route";
+        } else if (data.status === "signal_lost") {
+          eta = "Signal lost";
+        }
+        return {
+          ...prev,
+          status: data.status as PointDetail["status"],
+          eta,
+        };
+      });
+    };
+
+    socket.on("point:location", handleLocationUpdate);
+    socket.on("point:status", handleStatusUpdate);
+
+    return () => {
+      socket.emit("leave:point", pointId);
+      socket.off("point:location", handleLocationUpdate);
+      socket.off("point:status", handleStatusUpdate);
+      socket.disconnect();
+    };
   }, [pointId]);
 
   const toggleFavorite = async () => {
@@ -122,8 +176,8 @@ export default function PointDetailPage() {
         )}
 
         <section className="relative h-64 rounded-xl overflow-hidden glass-card">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] to-[#1e1b4b] flex items-center justify-center">
-            <span className="material-symbols-outlined text-primary/30 text-[80px]">map</span>
+          <div className="absolute inset-0">
+            <PointMap lat={point.lat} lng={point.lng} code={point.code} status={point.status} />
           </div>
           <div className="absolute top-4 left-4 z-10">
             <div className="bg-surface/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-glass-border flex items-center gap-2">

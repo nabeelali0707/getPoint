@@ -9,7 +9,7 @@ export const reportsRouter = Router();
 reportsRouter.use(authenticate);
 
 reportsRouter.get("/", authorize("student"), asyncHandler(reportsController.listMyReports));
-reportsRouter.post("/", authorize("student"), asyncHandler(reportsController.createReport));
+reportsRouter.post("/", authorize("student", "driver"), asyncHandler(reportsController.createReport));
 
 reportsRouter.get("/admin", authorize("admin"), asyncHandler(reportsController.listAdminReports));
 reportsRouter.patch("/:id/resolve", authorize("admin"), asyncHandler(reportsController.resolveReport));

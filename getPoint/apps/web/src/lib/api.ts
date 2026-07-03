@@ -24,9 +24,11 @@ function extractErrorMessage(data: Record<string, unknown>): string {
 }
 
 export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "";
+  const url = path.startsWith("http") ? path : `${apiBaseUrl}${path}`;
   let res: Response;
   try {
-    res = await fetch(path, {
+    res = await fetch(url, {
       ...init,
       headers: {
         "Content-Type": "application/json",
