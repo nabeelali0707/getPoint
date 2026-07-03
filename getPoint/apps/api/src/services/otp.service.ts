@@ -1,7 +1,17 @@
 import crypto from "node:crypto";
 import { env } from "../config/env.js";
-import { redis } from "./redis.service.js";
+import {
+  deleteEphemeralState,
+  getEphemeralState,
+  setEphemeralState,
+  updateEphemeralStateValue,
+} from "./ephemeral-store.service.js";
 import { sendOtpEmail } from "./mail.service.js";
+
+type OtpState = {
+  code: string;
+  attempts: number;
+};
 
 function otpKey(email: string) {
   return `otp:${email.toLowerCase()}`;
@@ -9,18 +19,21 @@ function otpKey(email: string) {
 
 export async function createAndSendOtp(email: string) {
   const otp = crypto.randomInt(100000, 999999).toString();
-  await redis.set(otpKey(email), otp, "EX", env.OTP_TTL_SECONDS);
+  await setEphemeralState(otpKey(email), { code: otp, attempts: 0 }, env.OTP_TTL_SECONDS);
   await sendOtpEmail(email, otp);
 }
 
 export async function verifyOtp(email: string, otp: string) {
   const key = otpKey(email);
-  const storedOtp = await redis.get(key);
+  const storedOtp = await getEphemeralState<OtpState>(key);
 
-  if (!storedOtp || storedOtp !== otp) {
+  if (!storedOtp || storedOtp.code !== otp) {
+    if (storedOtp) {
+      await updateEphemeralStateValue(key, { ...storedOtp, attempts: storedOtp.attempts + 1 });
+    }
     return false;
   }
 
-  await redis.del(key);
+  await deleteEphemeralState(key);
   return true;
 }
