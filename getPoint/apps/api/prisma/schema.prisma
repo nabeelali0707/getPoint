@@ -117,12 +117,14 @@ model Trip {
   id        String     @id @default(uuid())
   pointId   String     @map("point_id")
   driverId  String     @map("driver_id")
+  routeId   String?    @map("route_id")
   startTime DateTime   @default(now()) @map("start_time")
   endTime   DateTime?  @map("end_time")
   status    TripStatus @default(started)
 
   point         Point          @relation(fields: [pointId], references: [id])
   driver        DriverProfile  @relation(fields: [driverId], references: [userId])
+  route         Route?         @relation(fields: [routeId], references: [id])
   locationPings LocationPing[]
 
   @@index([pointId, status])
@@ -186,4 +188,35 @@ model RefreshToken {
 
   @@index([userId, expiresAt])
   @@map("refresh_tokens")
+}
+
+model Route {
+  id          String      @id @default(uuid())
+  code        String      @unique
+  provider    String      
+  driverName  String?     @map("driver_name")
+  driverPhone String?     @map("driver_phone")
+  startTime   String      @map("start_time")
+  endTime     String      @map("end_time")
+  createdAt   DateTime    @default(now()) @map("created_at")
+
+  stops       RouteStop[]
+  trips       Trip[]
+
+  @@map("routes")
+}
+
+model RouteStop {
+  id            String @id @default(uuid())
+  routeId       String @map("route_id")
+  name          String
+  sequence      Int
+  scheduledTime String @map("scheduled_time")
+  lat           Float
+  lng           Float
+
+  route Route @relation(fields: [routeId], references: [id], onDelete: Cascade)
+
+  @@unique([routeId, sequence])
+  @@map("route_stops")
 }

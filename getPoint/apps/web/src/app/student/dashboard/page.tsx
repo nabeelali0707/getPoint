@@ -184,13 +184,15 @@ export default function StudentDashboard() {
                 </button>
 
                 <button
-                  onClick={() => router.push("/notifications")}
+                  onClick={() => router.push("/student/routes")}
                   className="glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 group bloom-button cursor-pointer"
                 >
                   <div className="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-all">
-                    <span className="material-symbols-outlined">notifications_active</span>
+                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
+                      map_location
+                    </span>
                   </div>
-                  <span className="text-xs font-semibold">Alerts</span>
+                  <span className="text-xs font-semibold">Routes</span>
                 </button>
 
                 <button

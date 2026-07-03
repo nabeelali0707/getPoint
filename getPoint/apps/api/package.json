@@ -10,7 +10,7 @@
     "start": "node dist/server.js",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "db:seed": "tsx src/db/seeds/admin.seed.ts && tsx src/db/seeds/points.seed.ts",
+    "db:seed": "tsx src/db/seeds/admin.seed.ts && tsx src/db/seeds/points.seed.ts && tsx src/db/seeds/routes.seed.ts",
     "db:seed:drivers": "tsx src/db/seeds/drivers.seed.ts"
   },
   "dependencies": {

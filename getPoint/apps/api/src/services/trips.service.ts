@@ -112,11 +112,21 @@ export async function startTrip(userId: string, pointId?: string) {
   const point = await prisma.point.findUnique({ where: { id: resolvedPointId } });
   if (!point) throw new HttpError(404, "Transit point not found.");
 
+  const matchedRoute = await prisma.route.findFirst({
+    where: {
+      OR: [
+        { code: { contains: point.code, mode: "insensitive" } },
+        { stops: { some: { name: { contains: point.name, mode: "insensitive" } } } }
+      ]
+    }
+  });
+
   const trip = await prisma.trip.create({
     data: {
       pointId: resolvedPointId,
       driverId: userId,
       status: "started",
+      routeId: matchedRoute?.id ?? null,
     },
     include: {
       point: true,
