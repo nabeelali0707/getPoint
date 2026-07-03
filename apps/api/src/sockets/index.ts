@@ -119,9 +119,17 @@ async function handlePointSubscribe(socket: AuthenticatedSocket, payload: unknow
   const room = pointRoom(point.code);
   await socket.join(room);
 
-  const latestLocation = await getLatestLocationForPoint(pointId);
-  if (latestLocation) {
-    socket.emit("point:location", latestLocation);
+  try {
+    const latestLocation = await getLatestLocationForPoint(pointId);
+    if (latestLocation) {
+      socket.emit("point:location", latestLocation);
+    }
+  } catch {
+    socket.emit("point:warning", {
+      pointId,
+      pointCode: point.code,
+      message: "Subscribed to point updates, but the latest location is temporarily unavailable."
+    });
   }
 
   return { room, pointId, pointCode: point.code };
