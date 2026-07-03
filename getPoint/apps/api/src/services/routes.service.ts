@@ -37,7 +37,7 @@ function serializeRoute(
   },
   activeTrip: any | null,
 ) {
-  const latestPing = activeTrip?.locationPings?.[0];
+  const latestPing = activeTrip?.locationCache;
   const isLive = Boolean(activeTrip && latestPing);
 
   return {
@@ -75,7 +75,7 @@ export async function listRoutes() {
   const activeTrips = await prisma.trip.findMany({
     where: { status: { in: ["started", "paused"] } },
     include: {
-      locationPings: { orderBy: { timestamp: "desc" }, take: 1 },
+      locationCache: true,
     },
   });
 
@@ -106,7 +106,7 @@ export async function getRouteById(routeId: string) {
   const activeTrip = await prisma.trip.findFirst({
     where: { routeId, status: { in: ["started", "paused"] } },
     include: {
-      locationPings: { orderBy: { timestamp: "desc" }, take: 1 },
+      locationCache: true,
     },
   });
 

@@ -1,4 +1,5 @@
 import type { Server } from "socket.io";
+import { getLatestLocationForPoint } from "../services/trip-location-cache.service.js";
 
 export function registerSocketHandlers(io: Server) {
   io.on("connection", (socket) => {
@@ -7,6 +8,23 @@ export function registerSocketHandlers(io: Server) {
     socket.on("join:point", (pointId: string) => {
       if (pointId) {
         void socket.join(`point:${pointId}`);
+        void getLatestLocationForPoint(pointId)
+          .then((latestLocation) => {
+            if (latestLocation) {
+              socket.emit("point:location", {
+                pointId,
+                lat: latestLocation.lat,
+                lng: latestLocation.lng,
+                speed: latestLocation.speed,
+              });
+            }
+          })
+          .catch(() => {
+            socket.emit("point:warning", {
+              pointId,
+              message: "Subscribed to point updates, but the latest location is temporarily unavailable.",
+            });
+          });
       }
     });
 

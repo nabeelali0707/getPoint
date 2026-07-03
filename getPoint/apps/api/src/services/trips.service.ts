@@ -1,6 +1,7 @@
 import { prisma } from "../db/prisma.js";
 import { HttpError } from "../utils/http-error.js";
 import { getIoInstance } from "../sockets/io-instance.js";
+import { upsertTripLocationCache } from "./trip-location-cache.service.js";
 
 function serializeTrip(
   trip: {
@@ -9,10 +10,10 @@ function serializeTrip(
     startTime: Date;
     endTime: Date | null;
     point: { id: string; code: string; name: string; description: string | null };
-    locationPings: { speed: number | null; lat: number; lng: number }[];
+    locationCache: { speed: number | null; lat: number; lng: number } | null;
   },
 ) {
-  const latestPing = trip.locationPings[0];
+  const latestPing = trip.locationCache;
   const isLive = trip.status === "started" || trip.status === "paused";
 
   return {
@@ -53,7 +54,7 @@ async function findActiveTrip(driverId: string) {
     },
     include: {
       point: true,
-      locationPings: { orderBy: { timestamp: "desc" }, take: 1 },
+      locationCache: true,
     },
   });
 }
@@ -130,17 +131,15 @@ export async function startTrip(userId: string, pointId?: string) {
     },
     include: {
       point: true,
-      locationPings: true,
+      locationCache: true,
     },
   });
 
-  await prisma.locationPing.create({
-    data: {
-      tripId: trip.id,
-      lat: point.referenceStopLat,
-      lng: point.referenceStopLng,
-      speed: 0,
-    },
+  await upsertTripLocationCache({
+    tripId: trip.id,
+    lat: point.referenceStopLat,
+    lng: point.referenceStopLng,
+    speed: 0,
   });
 
   await syncPointStatus(resolvedPointId);
@@ -165,7 +164,7 @@ export async function startTrip(userId: string, pointId?: string) {
     where: { id: trip.id },
     include: {
       point: true,
-      locationPings: { orderBy: { timestamp: "desc" }, take: 1 },
+      locationCache: true,
     },
   });
 
@@ -186,7 +185,7 @@ export async function endTrip(userId: string, tripId: string) {
     data: { status: "ended", endTime: new Date() },
     include: {
       point: true,
-      locationPings: { orderBy: { timestamp: "desc" }, take: 1 },
+      locationCache: true,
     },
   });
 
@@ -214,20 +213,18 @@ export async function recordPing(
 
   if (!trip) throw new HttpError(404, "Active trip not found.");
 
-  await prisma.locationPing.create({
-    data: {
-      tripId,
-      lat: input.lat,
-      lng: input.lng,
-      speed: input.speed ?? null,
-    },
+  await upsertTripLocationCache({
+    tripId,
+    lat: input.lat,
+    lng: input.lng,
+    speed: input.speed ?? null,
   });
 
   const refreshed = await prisma.trip.findUnique({
     where: { id: tripId },
     include: {
       point: true,
-      locationPings: { orderBy: { timestamp: "desc" }, take: 1 },
+      locationCache: true,
     },
   });
 

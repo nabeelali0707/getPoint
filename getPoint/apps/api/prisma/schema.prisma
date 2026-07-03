@@ -126,6 +126,7 @@ model Trip {
   driver        DriverProfile  @relation(fields: [driverId], references: [userId])
   route         Route?         @relation(fields: [routeId], references: [id])
   locationPings LocationPing[]
+  locationCache TripLocationCache?
 
   @@index([pointId, status])
   @@index([driverId, status])
@@ -144,6 +145,21 @@ model LocationPing {
 
   @@index([tripId, timestamp])
   @@map("location_pings")
+}
+
+model TripLocationCache {
+  tripId     String   @id @map("trip_id")
+  lat        Float
+  lng        Float
+  speed      Float?
+  lastPingAt DateTime @map("last_ping_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  trip Trip @relation(fields: [tripId], references: [id], onDelete: Cascade)
+
+  @@index([lastPingAt])
+  @@map("trip_location_cache")
 }
 
 model Report {
