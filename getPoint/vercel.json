@@ -1,12 +1,8 @@
 {
+  "buildCommand": "npm run db:generate && npm run build:api && npm run build:web",
+  "outputDirectory": "apps/web/.next",
+  "framework": null,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.js" }
-  ],
-  "functions": {
-    "api/**/*.js": { "runtime": "nodejs20.x" }
-  },
-  "builds": [
-    { "src": "apps/web/next.config.ts", "use": "@vercel/next" },
-    { "src": "api/index.js", "use": "@vercel/node" }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "get-point-root-delegator",
+  "private": true,
+  "workspaces": [
+    "getPoint",
+    "getPoint/apps/*",
+    "getPoint/packages/*"
+  ],
+  "scripts": {
+    "build": "cd getPoint && npm run db:generate && npm run build:api && npm run build:web"
+  }
+}
