@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_H6AgHdtH0YzLO9JFYJceBTieawT3",
+      "name": "get-point",
+      "directory": ".",
+      "orgId": "team_C17H41lkRAhQmgAsIi4WrUSN"
+    }
+  ]
+}

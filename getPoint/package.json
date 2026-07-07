@@ -12,6 +12,7 @@
     "dev:web": "npm run dev -w @point/web",
     "build:web": "npm run build -w @point/web",
     "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "build": "npm run db:generate && npm run build:api && npm run build:web",
     "db:generate": "npm run db:generate -w @point/api",
     "db:migrate": "npm run db:migrate -w @point/api",
     "db:seed": "npm run db:seed -w @point/api",

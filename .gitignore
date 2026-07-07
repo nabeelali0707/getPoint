@@ -1,9 +1,0 @@
-.vercel
-.env*
-node_modules/
-.pnpm-store/
-.next/
-dist/
-*.log
-.agents/
-skills-lock.json
