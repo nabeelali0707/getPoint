@@ -51,8 +51,8 @@ export default function DriverRegisterPage() {
       });
 
       setIsSuccess(true);
-    } catch (err: any) {
-      setErrorMsg(err.message || "Registration failed. Try again.");
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : "Registration failed. Try again.");
     } finally {
       setIsLoading(false);
     }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import BottomNav from "@/components/BottomNav";
@@ -66,6 +66,7 @@ export default function RouteDetailPage() {
 
   useEffect(() => {
     loadRoute();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [routeId]);
 
   // Sockets Subscription (for Live mode)
@@ -73,7 +74,7 @@ export default function RouteDetailPage() {
     const client = realtime;
     if (!route || !route.isLive || !route.tripId || !client) return;
 
-    const handleTripUpdate = (updatedTrip: any) => {
+    const handleTripUpdate = (updatedTrip: { lat?: number; lng?: number; speed?: number; status?: string }) => {
       if (updatedTrip.lat && updatedTrip.lng) {
         setBusCoords({ lat: updatedTrip.lat, lng: updatedTrip.lng });
         setCurrentSpeed(updatedTrip.speed);
@@ -98,7 +99,8 @@ export default function RouteDetailPage() {
     return () => {
       void client.removeChannel(channel);
     };
-  }, [route?.isLive, route?.tripId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [route?.isLive, route?.tripId, route?.liveLat, route?.liveLng, route?.liveSpeed]);
 
   // Timetable simulation loop (for Fallback mode)
   useEffect(() => {

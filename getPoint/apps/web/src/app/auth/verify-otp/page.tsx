@@ -71,8 +71,8 @@ export default function VerifyOtpPage() {
       setTimeout(() => {
         router.push("/auth/login");
       }, 2000);
-    } catch (err: any) {
-      setErrorMsg(err.message || "Failed to verify OTP.");
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : "Failed to verify OTP.");
     } finally {
       setIsLoading(false);
     }
@@ -92,8 +92,8 @@ export default function VerifyOtpPage() {
 
       setSuccessMsg("A fresh OTP has been sent.");
       setTimer(60);
-    } catch (err: any) {
-      setErrorMsg(err.message || "Failed to resend OTP.");
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : "Failed to resend OTP.");
     } finally {
       setIsLoading(false);
     }
@@ -154,7 +154,7 @@ export default function VerifyOtpPage() {
 
         <h2 className="text-2xl font-bold mb-2">Check your NU email</h2>
         <p className="text-sm text-[#c2c6d6] mb-8 max-w-[280px]">
-          We've sent a 6-digit verification code to <span className="text-primary font-medium block mt-1">{email}</span>
+          We&apos;ve sent a 6-digit verification code to <span className="text-primary font-medium block mt-1">{email}</span>
         </p>
 
         <form onSubmit={handleVerify} className="w-full flex flex-col items-center gap-8">

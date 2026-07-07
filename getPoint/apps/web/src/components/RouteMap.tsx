@@ -25,7 +25,7 @@ const statusColors = {
   offline: "#6b7280",  // gray
 };
 
-const createStopIcon = (time: string, sequence: number) => {
+const createStopIcon = (time: string) => {
   return L.divIcon({
     className: "custom-stop-marker",
     html: `
@@ -105,11 +105,11 @@ export default function RouteMap({ stops, busCoords, busStatus }: RouteMapProps)
           <Marker
             key={stop.sequence}
             position={[stop.lat, stop.lng]}
-            icon={createStopIcon(stop.scheduledTime, stop.sequence)}
+            icon={createStopIcon(stop.scheduledTime)}
           />
         ))}
         {busCoords && busStatus !== "offline" && (
-          <Marker position={[busCoords.lat, busCoords.lng]} icon={createBusIcon(busStatus as any)} />
+          <Marker position={[busCoords.lat, busCoords.lng]} icon={createBusIcon(busStatus)} />
         )}
       </MapContainer>
     </div>

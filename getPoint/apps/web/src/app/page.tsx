@@ -40,7 +40,7 @@ export default function WelcomePage() {
             <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
               book
             </span>
-            <span>I'm a Student</span>
+            <span>I&apos;m a Student</span>
           </button>
 
           {/* Driver CTA */}
@@ -49,7 +49,7 @@ export default function WelcomePage() {
             className="glass-card w-full py-4 px-6 rounded-xl flex items-center justify-center gap-2 text-xl font-semibold text-[#dae2fd] border border-[rgba(255,255,255,0.1)] hover:bg-white/10 active:scale-95 transition-all ease-out duration-200 cursor-pointer"
           >
             <span className="material-symbols-outlined">directions_car</span>
-            <span>I'm a Driver</span>
+            <span>I&apos;m a Driver</span>
           </button>
         </div>
       </main>

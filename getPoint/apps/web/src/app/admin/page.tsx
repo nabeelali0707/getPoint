@@ -158,6 +158,7 @@ export default function AdminDashboard() {
         clearInterval(playTimerRef.current);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlayActive, selectedRoute, directionFilter]);
 
   // Sync test time limits when route or direction changes
@@ -167,6 +168,7 @@ export default function AdminDashboard() {
       const startMin = timeToMinutes(activeStops[0].scheduledTime);
       setTestTimeMinutes(startMin);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedRoute, directionFilter]);
 
   const handleApprove = async (id: string) => {

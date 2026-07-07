@@ -45,8 +45,8 @@ export default function LoginPage() {
       } else {
         router.push("/");
       }
-    } catch (err: any) {
-      setErrorMsg(err.message || "Failed to log in.");
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : "Failed to log in.");
     } finally {
       setIsLoading(false);
     }
@@ -174,7 +174,7 @@ export default function LoginPage() {
         {/* Footer */}
         <footer className="mt-auto pt-12 text-center flex flex-col gap-4">
           <p className="text-sm text-[#c2c6d6]">
-            Don't have an account?
+            Don&apos;t have an account?
             <Link className="text-primary font-bold hover:underline ml-1" href="/auth/student-signup">
               Sign up as Student
             </Link>

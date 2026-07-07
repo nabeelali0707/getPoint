@@ -74,8 +74,8 @@ export default function StudentSignupPage() {
       // Store email in sessionStorage to pass to verify-otp
       sessionStorage.setItem("signup_email", email);
       router.push("/auth/verify-otp");
-    } catch (err: any) {
-      setErrorMsg(err.message || "Something went wrong.");
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
       setIsLoading(false);
     }
